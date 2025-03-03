@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type ButtonBaseProps = {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "text";
   size?: "sm" | "md" | "lg";
   className?: string;
 };
@@ -36,6 +36,7 @@ export default function Button({
     primary: "bg-primary text-white hover:bg-primary-dark",
     secondary: "bg-black text-white hover:bg-gray-800",
     outline: "border border-current bg-transparent hover:bg-gray-50",
+    text: "bg-transparent hover:underline",
   };
   
   // Size styles

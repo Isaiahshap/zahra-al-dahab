@@ -13,6 +13,20 @@ const featuredCollections = [
     image: "https://images.unsplash.com/photo-1546168555-af9bf2a0329a?q=80&w=1887&auto=format&fit=crop",
     href: "/collections/bridal",
   },
+  {
+    name: "Diamond Collection",
+    slug: "diamond",
+    description: "Exquisite diamond pieces for every occasion",
+    image: "https://images.unsplash.com/photo-1586878341324-7090d54aaec7?q=80&w=1887&auto=format&fit=crop",
+    href: "/collections/diamond",
+  },
+  {
+    name: "Gold Essentials",
+    slug: "gold-essentials",
+    description: "Timeless gold pieces for your everyday elegance",
+    image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1887&auto=format&fit=crop",
+    href: "/collections/gold-essentials",
+  },
   // Add other collections here
 ];
 

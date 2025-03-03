@@ -21,12 +21,12 @@ export default function ShopByCollection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="grid md:grid-cols-2 gap-8 md:gap-12">
+    <div ref={containerRef} className="grid md:grid-cols-2 gap-8 md:gap-12 bg-white rounded-lg shadow-lg overflow-hidden">
       {/* Image side */}
       <div className="relative aspect-square md:aspect-auto md:h-full">
         {collections.map((collection, index) => (
           <motion.div
-            key={collection.slug}
+            key={collection.href}
             className="absolute inset-0 h-full w-full"
             initial={{ opacity: 0 }}
             animate={{ 
@@ -36,36 +36,41 @@ export default function ShopByCollection() {
             transition={{ duration: 0.7 }}
           >
             <Image
-              src={collection.image || `/images/collections/${collection.slug}.jpg`}
+              src={collection.image || `/images/collections/${collection.href.split('/').pop()}.jpg`}
               alt={collection.name}
               fill
               className="object-cover"
             />
+            {/* Add overlay gradient */}
+            <div key={`overlay-${collection.href}`} className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </motion.div>
         ))}
       </div>
       
       {/* Text side */}
-      <div className="flex flex-col justify-center space-y-8">
-        <Heading level={2}>Our Collections</Heading>
+      <div className="flex flex-col justify-center space-y-8 p-8 md:p-12">
+        <div className="space-y-2">
+          <Heading level={2} className="text-gray-900">Our Collections</Heading>
+          <Text variant="muted" className="text-gray-600">Discover our curated selection of fine jewelry</Text>
+        </div>
         
         <div className="space-y-6">
           {collections.map((collection, index) => (
             <div 
-              key={collection.slug}
-              className={`cursor-pointer transition-all duration-300 border-l-2 pl-4 ${
+              key={collection.href}
+              className={`cursor-pointer transition-all duration-300 border-l-4 pl-4 py-2 ${
                 activeIndex === index 
-                  ? "border-accent" 
-                  : "border-gray-200 hover:border-gray-400"
+                  ? "border-gold bg-gold/5" 
+                  : "border-gray-200 hover:border-gray-300 hover:bg-gray-50"
               }`}
               onClick={() => setActiveIndex(index)}
             >
               <h4 className={`text-lg font-medium mb-1 transition-colors ${
-                activeIndex === index ? "text-accent" : ""
+                activeIndex === index ? "text-gold" : "text-gray-900"
               }`}>
                 {collection.name}
               </h4>
-              <Text variant="muted" className="line-clamp-2">
+              <Text variant="muted" className="line-clamp-2 text-gray-600">
                 {collection.description}
               </Text>
             </div>
@@ -75,7 +80,7 @@ export default function ShopByCollection() {
           <Button 
             href="/collections"
             variant="outline"
-            className="border-black text-black hover:bg-black hover:text-white"
+            className="border-gold text-gold hover:bg-gold hover:text-white"
           >
             View All Collections
           </Button>

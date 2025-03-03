@@ -12,6 +12,10 @@ export interface CategoryItem {
   image?: string;
 }
 
+// Import the women's and jewelry navigation items
+import { womensCategories, womensFeatured, womensCollections } from "./womens";
+import { jewelryCategories, jewelryFeatured, sharedCollections } from "./jewelry";
+
 // Main navigation categories
 export const categories: CategoryItem[] = [
   {
@@ -27,24 +31,12 @@ export const categories: CategoryItem[] = [
   {
     name: "Women",
     href: "/women",
-    dropdown: [
-      { name: "Watches", href: "/women/watches" },
-      { name: "Best Sellers", href: "/women/best-sellers" },
-      { name: "Jewellery", href: "/women/jewellery" },
-      { name: "Personalized", href: "/women/personalized" },
-      { name: "Shop By Collection", href: "/women/collections" },
-    ],
+    dropdown: womensCategories,
   },
   {
-    name: "Jewelery",
-    href: "/jewelery",
-    dropdown: [
-      { name: "Necklaces", href: "/jewelery/necklaces" },
-      { name: "Rings", href: "/jewelery/rings" },
-      { name: "Bracelets", href: "/jewelery/bracelets" },
-      { name: "Earrings", href: "/jewelery/earrings" },
-      { name: "Anklets", href: "/jewelery/anklets" },
-    ],
+    name: "Jewelry",
+    href: "/jewelry",
+    dropdown: jewelryCategories,
   },
   {
     name: "Perfume",
@@ -65,57 +57,36 @@ export const categories: CategoryItem[] = [
   },
 ];
 
+// Featured content mapping for dropdowns
+export const featuredMapping = {
+  Women: womensFeatured,
+  Jewelry: jewelryFeatured,
+  Men: [
+    {
+      title: "Premium Watches",
+      image: "/images/mens-watches.jpg",
+      link: "/men/watches",
+      description: "Discover our luxury timepieces",
+    },
+    {
+      title: "Gold Collection",
+      image: "/images/mens-gold.jpg",
+      link: "/men/collections/gold",
+      description: "Sophisticated gold pieces for men",
+    },
+    {
+      title: "New Arrivals",
+      image: "/images/mens-new-arrivals.jpg",
+      link: "/men/new-arrivals",
+      description: "Just landed in our collection",
+    },
+  ],
+};
+
 // Collections data
 export const collections = [
-  {
-    name: "Fan Collection",
-    slug: "fan",
-    href: "/collections/fan",
-    description: "Elegant fan-inspired jewelry pieces with intricate detailing",
-    image: "https://images.unsplash.com/photo-1613843451161-17303d8d5fd9?q=80&w=1974&auto=format&fit=crop",
-  },
-  {
-    name: "Petite",
-    slug: "petite",
-    href: "/collections/petite",
-    description: "Delicate timepieces for the refined woman",
-    image: "https://images.unsplash.com/photo-1619119069152-a2b331eb392a?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Diamond Classic",
-    slug: "diamond-classic",
-    href: "/collections/diamond-classic",
-    description: "Timeless diamond pieces with classic elegance",
-    image: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=1974&auto=format&fit=crop",
-  },
-  {
-    name: "Diamond Oval",
-    slug: "diamond-oval",
-    href: "/collections/diamond-oval",
-    description: "Oval-shaped diamond pieces with a modern twist",
-    image: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    name: "Classic",
-    slug: "classic",
-    href: "/collections/classic",
-    description: "Timeless designs that never go out of style",
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1974&auto=format&fit=crop",
-  },
-  {
-    name: "Joory",
-    slug: "joory",
-    href: "/collections/joory",
-    description: "Contemporary designs with an artistic flair",
-    image: "https://images.unsplash.com/photo-1631982690223-8aa7e50bd80f?q=80&w=1974&auto=format&fit=crop",
-  },
-  {
-    name: "Heritage",
-    slug: "heritage",
-    href: "/collections/heritage",
-    description: "Designs inspired by rich cultural heritage",
-    image: "https://images.unsplash.com/photo-1633810513000-1afaea3ca5cf?q=80&w=1974&auto=format&fit=crop",
-  },
+  ...womensCollections,
+  ...sharedCollections,
   {
     name: "Oval",
     slug: "oval",
