@@ -6,13 +6,13 @@ import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const raleway = Raleway({
-  variable: "--font-raleway",
+  variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
 
 const montserrat = Montserrat({
-  variable: "--font-montserrat",
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });

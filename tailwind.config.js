@@ -1,6 +1,5 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -32,6 +31,7 @@ const config: Config = {
       },
       secondary: "#0F1113",
       accent: "#D4AF37",
+      gold: "#D4AF37",
     },
     extend: {
       borderRadius: {
@@ -45,6 +45,4 @@ const config: Config = {
       },
     },
   },
-};
-
-export default config; 
+}; 
