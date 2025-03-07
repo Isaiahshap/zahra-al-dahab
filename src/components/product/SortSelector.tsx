@@ -20,7 +20,7 @@ export default function SortSelector({
 }: SortSelectorProps) {
   return (
     <div className={`flex items-center ${className}`}>
-      <label htmlFor="sort-select" className="mr-2 text-sm font-medium text-gray-700">
+      <label htmlFor="sort-select" className="mr-2 text-sm font-medium text-darkBrown">
         Sort by:
       </label>
       <div className="relative">
@@ -28,7 +28,7 @@ export default function SortSelector({
           id="sort-select"
           value={selectedOption}
           onChange={(e) => onChange(e.target.value)}
-          className="px-3 py-2 pr-8 text-sm font-medium bg-white border border-gray-300 rounded-sm appearance-none focus:outline-none focus:border-black"
+          className="px-3 py-2 pr-8 text-sm font-medium bg-white border border-gray-300 rounded-sm appearance-none focus:outline-none focus:border-darkBrown"
         >
           {options.map((option) => (
             <option key={option.id} value={option.id}>
@@ -38,7 +38,7 @@ export default function SortSelector({
         </select>
         <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
           <svg 
-            className="w-4 h-4 text-gray-500" 
+            className="w-4 h-4 text-darkBrown" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24" 

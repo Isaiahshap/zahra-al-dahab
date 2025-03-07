@@ -42,8 +42,8 @@ export default function CategoryHeader({
           <nav className="flex text-sm">
             {breadcrumbs.map((breadcrumb, index) => (
               <div key={breadcrumb.href} className="flex items-center">
-                {index > 0 && <span className="mx-2 text-gray-400">/</span>}
-                <Link href={breadcrumb.href} className="text-gray-500 hover:text-gray-700">
+                {index > 0 && <span className="mx-2 text-darkBrown">/</span>}
+                <Link href={breadcrumb.href} className="text-darkBrown hover:text-darkBrown">
                   {breadcrumb.name}
                 </Link>
               </div>
@@ -81,7 +81,7 @@ export default function CategoryHeader({
         /* Simple header without background image */
         <div className="max-w-7xl mx-auto px-4 py-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-black max-w-2xl mx-auto mb-8">
             {description}
           </p>
         </div>

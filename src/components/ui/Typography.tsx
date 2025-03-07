@@ -48,10 +48,10 @@ export function Text({
   className = "" 
 }: TextProps) {
   const variants = {
-    body: "text-base text-gray-800 dark:text-gray-200",
-    lead: "text-lg md:text-xl text-gray-800 dark:text-gray-200",
-    small: "text-sm text-gray-800 dark:text-gray-200",
-    muted: "text-sm text-gray-600 dark:text-gray-400",
+    body: "text-base text-darkBrown",
+    lead: "text-lg md:text-xl text-darkBrown",
+    small: "text-sm text-darkBrown",
+    muted: "text-sm text-darkBrown",
   };
   
   return (

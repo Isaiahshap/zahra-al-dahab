@@ -5,12 +5,14 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       white: "#ffffff",
       black: "#171717",
+      darkBrown: "#3A2A1D", /* Rich dark brown for text */
       gray: {
         50: "#f5f5f5",
         100: "#e5e5e5",

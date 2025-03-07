@@ -8,35 +8,18 @@
   --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #3A2A1D;
   --primary: #9E835F;
   --primary-light: #CEBD9C;
   --primary-dark: #715C3F;
   --secondary: #0F1113;
   --accent: #D4AF37;
   --muted: #f5f5f5;
-  --muted-foreground: #737373;
+  --muted-foreground: #3A2A1D;
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #171717;
+  --ring: #3A2A1D;
   --radius: 0.5rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F1113;
-    --foreground: #f5f5f5;
-    --primary: #CEBD9C;
-    --primary-light: #D8CEBA;
-    --primary-dark: #9E835F;
-    --secondary: #f5f5f5;
-    --accent: #F0CF65;
-    --muted: #262626;
-    --muted-foreground: #a3a3a3;
-    --border: #262626;
-    --input: #262626;
-    --ring: #a3a3a3;
-  }
 }
 
 body {

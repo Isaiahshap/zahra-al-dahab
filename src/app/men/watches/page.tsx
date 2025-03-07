@@ -1,9 +1,8 @@
 "use client";
 
-import { useToast } from "@/components/ui/Toast";
 import CategoryHeader from "@/components/category/CategoryHeader";
 import ProductGrid from "@/components/product/ProductGrid";
-import { FilterOption, FilterOptions, SortOption } from "@/components/product/ProductFilter";
+import { FilterOptions, SortOption } from "@/components/product/ProductFilter";
 import { ProductWithFeatures } from "@/components/product/ProductModal";
 
 // Filter options
@@ -157,7 +156,7 @@ const watches: ProductWithFeatures[] = [
 
 export default function MensWatchesPage() {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-white">
       <CategoryHeader 
         title="Luxury Men's Watches"
         description="Discover our exquisite collection of timepieces crafted for the modern gentleman."

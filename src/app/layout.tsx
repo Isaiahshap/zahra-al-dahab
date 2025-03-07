@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${raleway.variable} ${montserrat.variable} 
-        font-sans antialiased bg-white text-black dark:bg-secondary dark:text-gray-50
+        font-sans antialiased bg-white text-darkBrown
         selection:bg-primary selection:text-white`}
       >
         <ToastProvider>

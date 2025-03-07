@@ -1,7 +1,5 @@
 "use client";
 
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import Button from "@/components/ui/Button";
 import { FiltersState, FilterOptions } from "./ProductFilter";
 
 type ProductSidebarProps = {
@@ -24,7 +22,7 @@ export default function ProductSidebar({
       <div className="flex justify-between items-center mb-6">
         <h3 className="font-semibold text-lg">Filters</h3>
         <button 
-          className="text-gray-600 hover:text-primary text-sm"
+          className="text-darkBrown hover:text-primary text-sm"
           onClick={onClearFilters}
         >
           Clear All
@@ -46,7 +44,7 @@ export default function ProductSidebar({
               />
               <label 
                 htmlFor={`sidebar-collection-${option.id}`}
-                className="ml-2 text-sm text-gray-700"
+                className="ml-2 text-sm text-darkBrown"
               >
                 {option.label}
               </label>
@@ -70,7 +68,7 @@ export default function ProductSidebar({
               />
               <label 
                 htmlFor={`sidebar-price-${option.id}`}
-                className="ml-2 text-sm text-gray-700"
+                className="ml-2 text-sm text-darkBrown"
               >
                 {option.label}
               </label>
@@ -94,7 +92,7 @@ export default function ProductSidebar({
               />
               <label 
                 htmlFor={`sidebar-availability-${option.id}`}
-                className="ml-2 text-sm text-gray-700"
+                className="ml-2 text-sm text-darkBrown"
               >
                 {option.label}
               </label>
@@ -118,7 +116,7 @@ export default function ProductSidebar({
               />
               <label 
                 htmlFor={`sidebar-special-${option.id}`}
-                className="ml-2 text-sm text-gray-700"
+                className="ml-2 text-sm text-darkBrown"
               >
                 {option.label}
               </label>

@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
 import { categories, featuredMapping } from "@/lib/navigation";
 import EnhancedDropdownMenu from "./EnhancedDropdownMenu";
+import { useCartStore } from "@/store/cartStore";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -15,6 +17,29 @@ export default function Navbar() {
   const [timeLeft, setTimeLeft] = useState({ days: 33, hours: 3, minutes: 17, seconds: 38 });
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  
+  // Get cart items count from the cart store
+  const totalItems = useCartStore(state => state.totalItems);
+  
+  // Get current path for route change detection
+  const pathname = usePathname();
+
+  // Close dropdown when route changes
+  useEffect(() => {
+    closeDropdown();
+  }, [pathname]);
+
+  // Function to close dropdown
+  const closeDropdown = () => {
+    setActiveDropdown(null);
+    setIsDropdownVisible(false);
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+  };
 
   // Handle dropdown hover
   const handleMouseEnter = (category: string) => {
@@ -30,7 +55,7 @@ export default function Navbar() {
     const timeout = setTimeout(() => {
       setActiveDropdown(null);
       setIsDropdownVisible(false);
-    }, 500); // Increased delay for smoother transition
+    }, 300); // Shorter delay for better responsiveness
     setHoverTimeout(timeout);
   };
 
@@ -75,9 +100,9 @@ export default function Navbar() {
       </div>
 
       {/* Navbar container - make this sticky instead of just the header */}
-      <div className="sticky top-0 z-50 bg-white">
+      <div className="sticky top-0 z-50 bg-white" ref={navRef}>
         {/* Main navigation */}
-        <header className={`w-full transition-all duration-300 ${isScrolled ? "shadow-md" : ""}`}>
+        <header className={`w-full transition-all duration-300 ${isScrolled ? "shadow-2xl" : ""}`}>
           <div className="container mx-auto px-4">
             <div className="relative flex items-center h-20">
               {/* Mobile menu toggle */}
@@ -120,7 +145,6 @@ export default function Navbar() {
                     key={category.name}
                     className="relative px-4"
                     onMouseEnter={() => handleMouseEnter(category.name)}
-                    onMouseLeave={handleMouseLeave}
                   >
                     <Link 
                       href={category.href}
@@ -153,7 +177,6 @@ export default function Navbar() {
                     key={category.name}
                     className="relative px-4"
                     onMouseEnter={() => handleMouseEnter(category.name)}
-                    onMouseLeave={handleMouseLeave}
                   >
                     <Link 
                       href={category.href}
@@ -204,7 +227,11 @@ export default function Navbar() {
                       <path d="M3 6h18" />
                       <path d="M16 10a4 4 0 0 1-8 0" />
                     </svg>
-                    <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 text-xs text-white bg-black rounded-full">0</span>
+                    {totalItems > 0 && (
+                      <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 text-xs text-white bg-black rounded-full">
+                        {totalItems > 99 ? '99+' : totalItems}
+                      </span>
+                    )}
                   </Link>
                   <button className="hidden md:block text-black">
                     <svg 
@@ -229,24 +256,32 @@ export default function Navbar() {
           </div>
         </header>
 
+        {/* Gold horizontal line - always visible */}
+        <div className="w-full h-[1px] bg-[#D4AF37]"></div>
+
         {/* Dropdown menus - now inside the sticky container */}
-        <AnimatePresence>
-          {isDropdownVisible && activeDropdown && (
-            <EnhancedDropdownMenu
-              items={categories.find(c => c.name === activeDropdown)?.dropdown || []}
-              category={activeDropdown}
-              onMouseEnter={() => {
-                if (hoverTimeout) {
-                  clearTimeout(hoverTimeout);
-                  setHoverTimeout(null);
-                }
-                setIsDropdownVisible(true);
-              }}
-              onMouseLeave={handleMouseLeave}
-              featured={featuredMapping[activeDropdown as keyof typeof featuredMapping] || []}
-            />
-          )}
-        </AnimatePresence>
+        <div
+          ref={dropdownRef}
+          onMouseLeave={handleMouseLeave}
+        >
+          <AnimatePresence>
+            {isDropdownVisible && activeDropdown && (
+              <EnhancedDropdownMenu
+                items={categories.find(c => c.name === activeDropdown)?.dropdown || []}
+                category={activeDropdown}
+                onMouseEnter={() => {
+                  if (hoverTimeout) {
+                    clearTimeout(hoverTimeout);
+                    setHoverTimeout(null);
+                  }
+                  setIsDropdownVisible(true);
+                }}
+                onLinkClick={closeDropdown}
+                featured={featuredMapping[activeDropdown as keyof typeof featuredMapping] || []}
+              />
+            )}
+          </AnimatePresence>
+        </div>
 
         {/* Mobile menu */}
         <AnimatePresence>

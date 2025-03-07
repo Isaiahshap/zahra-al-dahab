@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { StarIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { ShoppingBagIcon } from "@heroicons/react/24/solid";
@@ -74,7 +73,7 @@ export default function ProductCard({ product, onQuickView, onAddToCart }: Produ
       </div>
       
       <div className="p-4">
-        <h3 className="text-lg font-semibold mb-1">{product.name}</h3>
+        <h3 className="text-lg font-normal font-sans mb-1">{product.name}</h3>
         
         {/* Rating */}
         <div className="flex items-center mb-2">
@@ -82,21 +81,21 @@ export default function ProductCard({ product, onQuickView, onAddToCart }: Produ
             {[1, 2, 3, 4, 5].map((star) => (
               <span key={star}>
                 {star <= Math.round(product.rating) ? (
-                  <StarIconSolid className="h-4 w-4 text-yellow-400" />
+                  <StarIconSolid className="h-4 w-4 text-gold" />
                 ) : (
-                  <StarIcon className="h-4 w-4 text-yellow-400" />
+                  <StarIcon className="h-4 w-4 text-gold" />
                 )}
               </span>
             ))}
           </div>
-          <span className="text-xs text-gray-500 ml-1">({product.reviewCount})</span>
+          <span className="text-xs text-darkBrown ml-1">({product.reviewCount})</span>
         </div>
         
         {/* Price */}
         <div className="flex items-baseline mb-3">
           <span className="text-xl font-bold">${product.price.toLocaleString()}</span>
           {product.originalPrice && (
-            <span className="text-sm text-gray-500 line-through ml-2">
+            <span className="text-sm text-darkBrown line-through ml-2">
               ${product.originalPrice.toLocaleString()}
             </span>
           )}

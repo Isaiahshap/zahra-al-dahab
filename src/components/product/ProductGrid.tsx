@@ -7,6 +7,8 @@ import ProductModal, { ProductWithFeatures } from "./ProductModal";
 import ProductFilter, { FilterOptions, FiltersState, SortOption } from "./ProductFilter";
 import ProductSidebar from "./ProductSidebar";
 import Button from "@/components/ui/Button";
+import { useCartStore } from "@/store/cartStore";
+import { motion, AnimatePresence } from "framer-motion";
 
 type ProductGridProps = {
   products: ProductWithFeatures[];
@@ -26,6 +28,8 @@ export default function ProductGrid({
   showSidebar = true
 }: ProductGridProps) {
   const { addToast } = useToast();
+  const { addItem } = useCartStore();
+  const [flyingProduct, setFlyingProduct] = useState<{ id: number, x: number, y: number } | null>(null);
   
   // State for filters
   const [filters, setFilters] = useState<FiltersState>({
@@ -123,10 +127,30 @@ export default function ProductGrid({
   };
   
   // Add to cart function
-  const addToCart = (product: ProductWithFeatures, qty: number) => {
+  const addToCart = (product: ProductWithFeatures, quantity: number) => {
+    // Add to cart store
+    addItem(product, quantity);
+    
+    // Add flying animation
+    const cartIcon = document.querySelector('.lucide-shopping-bag');
+    if (cartIcon) {
+      const cartRect = cartIcon.getBoundingClientRect();
+      setFlyingProduct({
+        id: product.id,
+        x: cartRect.left + cartRect.width / 2,
+        y: cartRect.top + cartRect.height / 2
+      });
+      
+      // Remove flying product after animation completes
+      setTimeout(() => {
+        setFlyingProduct(null);
+      }, 1000);
+    }
+    
+    // Show toast notification
     addToast({
       title: "Added to Cart",
-      description: `${qty} × ${product.name} added to your cart.`,
+      description: `${quantity} × ${product.name} added to your cart.`,
       type: "success",
       duration: 3000,
     });
@@ -141,7 +165,7 @@ export default function ProductGrid({
         <div className="mb-8">
           {title && <h2 className="text-3xl font-bold mb-2">{title}</h2>}
           {description && (
-            <p className="text-gray-600">{description}</p>
+            <p className="text-black">{description}</p>
           )}
         </div>
       )}
@@ -178,8 +202,8 @@ export default function ProductGrid({
               <ProductCard
                 key={product.id}
                 product={product}
-                onQuickView={setSelectedProduct}
-                onAddToCart={addToCart}
+                onQuickView={() => setSelectedProduct(product)}
+                onAddToCart={(product, quantity) => addToCart(product as ProductWithFeatures, quantity)}
               />
             ))}
           </div>
@@ -188,7 +212,7 @@ export default function ProductGrid({
           {sortedProducts.length === 0 && (
             <div className="text-center py-12">
               <h3 className="text-xl font-medium mb-2">No products found</h3>
-              <p className="text-gray-600 mb-4">Try adjusting your filters to find what you&apos;re looking for.</p>
+              <p className="text-black mb-4">Try adjusting your filters to find what you&apos;re looking for.</p>
               <Button onClick={clearFilters}>
                 Clear All Filters
               </Button>
@@ -196,6 +220,28 @@ export default function ProductGrid({
           )}
         </div>
       </div>
+      
+      {/* Flying product animation */}
+      <AnimatePresence>
+        {flyingProduct && (
+          <motion.div
+            className="fixed w-12 h-12 rounded-full bg-white shadow-lg z-50 flex items-center justify-center"
+            initial={{ opacity: 1, scale: 1, x: flyingProduct.x - 100, y: flyingProduct.y - 100 }}
+            animate={{ 
+              opacity: 0, 
+              scale: 0.5, 
+              x: flyingProduct.x, 
+              y: flyingProduct.y 
+            }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+              <span>✓</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Product detail modal */}
       <ProductModal

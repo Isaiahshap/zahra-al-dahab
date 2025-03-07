@@ -16,6 +16,7 @@ interface EnhancedDropdownMenuProps {
   }[];
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  onLinkClick?: () => void;
 }
 
 export default function EnhancedDropdownMenu({ 
@@ -23,7 +24,8 @@ export default function EnhancedDropdownMenu({
   category,
   featured = [],
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
+  onLinkClick
 }: EnhancedDropdownMenuProps) {
   return (
     <motion.div
@@ -39,8 +41,8 @@ export default function EnhancedDropdownMenu({
         willChange: "transform, opacity"
       }}
     >
-      {/* Add a small invisible area to prevent gap between navbar and dropdown */}
-      <div className="absolute -top-2 left-0 right-0 h-2 bg-transparent" />
+      {/* Replace the invisible area with a gold border line */}
+      <div className="absolute -top-[1px] left-0 right-0 h-[1px] bg-[#D4AF37]" />
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           
@@ -55,6 +57,7 @@ export default function EnhancedDropdownMenu({
                   <Link 
                     href={item.href}
                     className="group flex items-center transition-colors hover:text-gold"
+                    onClick={onLinkClick}
                   >
                     <span className="text-sm font-medium uppercase tracking-wide text-gray-800 group-hover:translate-x-1 transition-transform duration-200">
                       {item.name}
@@ -66,6 +69,7 @@ export default function EnhancedDropdownMenu({
                 <Link 
                   href={`/${category.toLowerCase()}`}
                   className="inline-flex items-center text-sm font-medium text-gold uppercase tracking-wide hover:underline"
+                  onClick={onLinkClick}
                 >
                   View All {category}
                   <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +85,7 @@ export default function EnhancedDropdownMenu({
             {featured.length > 0 ? (
               featured.map((item, index) => (
                 <div key={index} className="group">
-                  <Link href={item.link} className="block">
+                  <Link href={item.link} className="block" onClick={onLinkClick}>
                     <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-3">
                       <Image
                         src={item.image}
@@ -109,6 +113,7 @@ export default function EnhancedDropdownMenu({
                   <Link 
                     href={`/${category.toLowerCase()}/new-arrivals`} 
                     className="mt-4 px-6 py-2 bg-black text-white text-sm uppercase tracking-wide hover:bg-gold transition-colors duration-300"
+                    onClick={onLinkClick}
                   >
                     Shop Now
                   </Link>
@@ -119,6 +124,7 @@ export default function EnhancedDropdownMenu({
                   <Link 
                     href={`/${category.toLowerCase()}/best-sellers`} 
                     className="mt-4 px-6 py-2 bg-black text-white text-sm uppercase tracking-wide hover:bg-gold transition-colors duration-300"
+                    onClick={onLinkClick}
                   >
                     Shop Now
                   </Link>
@@ -129,6 +135,7 @@ export default function EnhancedDropdownMenu({
                   <Link 
                     href={`/${category.toLowerCase()}/collections`} 
                     className="mt-4 px-6 py-2 bg-black text-white text-sm uppercase tracking-wide hover:bg-gold transition-colors duration-300"
+                    onClick={onLinkClick}
                   >
                     View Collections
                   </Link>

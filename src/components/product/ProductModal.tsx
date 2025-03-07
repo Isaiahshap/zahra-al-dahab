@@ -31,7 +31,7 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
         <div className="p-4 border-b flex justify-between items-center">
-          <h3 className="text-xl font-semibold">{product.name}</h3>
+          <h3 className="text-xl font-normal font-sans">{product.name}</h3>
           <button onClick={onClose}>
             <XMarkIcon className="h-6 w-6" />
           </button>
@@ -55,7 +55,7 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
               <div className="flex items-baseline mb-4">
                 <span className="text-2xl font-bold">${product.price.toLocaleString()}</span>
                 {product.originalPrice && (
-                  <span className="text-base text-gray-500 line-through ml-2">
+                  <span className="text-base text-darkBrown line-through ml-2">
                     ${product.originalPrice.toLocaleString()}
                   </span>
                 )}
@@ -72,18 +72,18 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span key={star}>
                       {star <= Math.round(product.rating) ? (
-                        <StarIconSolid className="h-5 w-5 text-yellow-400" />
+                        <StarIconSolid className="h-5 w-5 text-gold" />
                       ) : (
-                        <StarIcon className="h-5 w-5 text-yellow-400" />
+                        <StarIcon className="h-5 w-5 text-gold" />
                       )}
                     </span>
                   ))}
                 </div>
-                <span className="text-sm text-gray-500 ml-2">{product.rating} ({product.reviewCount} reviews)</span>
+                <span className="text-sm text-darkBrown ml-2">{product.rating} ({product.reviewCount} reviews)</span>
               </div>
               
               {/* Description */}
-              <p className="text-gray-700 mb-4">{product.description}</p>
+              <p className="text-darkBrown mb-4">{product.description}</p>
               
               {/* Features */}
               {product.features && product.features.length > 0 && (
@@ -106,7 +106,7 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
                   <h4 className="font-medium mb-2">Collections:</h4>
                   <div className="flex flex-wrap gap-2">
                     {product.collections.map((collection, index) => (
-                      <span key={index} className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                      <span key={index} className="bg-gray-100 text-black text-xs font-medium px-2.5 py-0.5 rounded">
                         {collection}
                       </span>
                     ))}

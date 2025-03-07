@@ -67,9 +67,9 @@ export function ToastProvider({ children }: ToastProviderProps) {
           <div
             key={toast.id}
             className={`rounded-lg shadow-lg p-4 flex items-start gap-3 transform transition-all duration-300 animate-slide-up
-              ${toast.type === "success" ? "bg-green-50 text-green-800 border-l-4 border-green-500" : ""}
-              ${toast.type === "error" ? "bg-red-50 text-red-800 border-l-4 border-red-500" : ""}
-              ${toast.type === "info" ? "bg-blue-50 text-blue-800 border-l-4 border-blue-500" : ""}
+              ${toast.type === "success" ? "bg-white text-green-800 border-l-4 border-green-500" : ""}
+              ${toast.type === "error" ? "bg-white text-red-800 border-l-4 border-red-500" : ""}
+              ${toast.type === "info" ? "bg-white text-blue-800 border-l-4 border-blue-500" : ""}
             `}
           >
             {/* Icon */}
@@ -86,7 +86,7 @@ export function ToastProvider({ children }: ToastProviderProps) {
             {/* Close button */}
             <button
               onClick={() => removeToast(toast.id)}
-              className="flex-shrink-0 text-gray-400 hover:text-gray-500 focus:outline-none"
+              className="flex-shrink-0 text-black hover:text-black focus:outline-none"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>

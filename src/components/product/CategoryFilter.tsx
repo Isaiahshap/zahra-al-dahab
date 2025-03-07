@@ -20,7 +20,7 @@ export default function CategoryFilter({
         className={`px-4 py-2 text-sm font-medium transition-all duration-300 border rounded-sm 
         ${!selectedCategory 
           ? 'bg-black text-white border-black' 
-          : 'bg-white text-gray-700 border-gray-300 hover:border-black'
+          : 'bg-white text-darkBrown border-gray-300 hover:border-darkBrown'
         }`}
       >
         All
@@ -33,7 +33,7 @@ export default function CategoryFilter({
           className={`px-4 py-2 text-sm font-medium transition-all duration-300 border rounded-sm 
           ${selectedCategory === category 
             ? 'bg-black text-white border-black' 
-            : 'bg-white text-gray-700 border-gray-300 hover:border-black'
+            : 'bg-white text-darkBrown border-gray-300 hover:border-darkBrown'
           }`}
         >
           {category}

@@ -156,7 +156,7 @@ export default function ProductFilter({
           {/* Clear filters button */}
           {showClearButton && onClearFilters && (
             <button 
-              className="text-gray-600 hover:text-primary text-sm px-2 flex items-center"
+              className="text-darkBrown hover:text-primary text-sm px-2 flex items-center"
               onClick={onClearFilters}
             >
               Clear All
@@ -302,7 +302,7 @@ export default function ProductFilter({
           {/* Clear filters button */}
           {showClearButton && onClearFilters && (
             <button 
-              className="text-gray-600 hover:text-primary border border-gray-300 rounded px-4 py-2 w-full text-center mb-4"
+              className="text-darkBrown hover:text-primary border border-gray-300 rounded px-4 py-2 w-full text-center mb-4"
               onClick={onClearFilters}
             >
               Clear All Filters
