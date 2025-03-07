@@ -24,7 +24,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section ref={heroRef} className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
+      <section ref={heroRef} className="relative w-full h-[30vh] md:h-[60vh] sm:h-[40vh] xl:h-[80vh] overflow-hidden">
         {/* Main large hero image */}
         <div className="absolute inset-0 w-full h-full">
           <Image

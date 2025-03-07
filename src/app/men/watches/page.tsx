@@ -156,7 +156,7 @@ const watches: ProductWithFeatures[] = [
 
 export default function MensWatchesPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
       <CategoryHeader 
         title="Luxury Men's Watches"
         description="Discover our exquisite collection of timepieces crafted for the modern gentleman."
