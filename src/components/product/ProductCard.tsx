@@ -31,9 +31,9 @@ type ProductCardProps = {
 export default function ProductCard({ product, onQuickView, onAddToCart }: ProductCardProps) {
   return (
     <div 
-      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-[450px]"
     >
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-64 overflow-hidden flex-shrink-0">
         <Image 
           src={product.image || "/images/placeholder-product.jpg"}
           alt={product.name}
@@ -72,44 +72,48 @@ export default function ProductCard({ product, onQuickView, onAddToCart }: Produ
         )}
       </div>
       
-      <div className="p-4">
-        <h3 className="text-lg font-normal font-sans mb-1">{product.name}</h3>
-        
-        {/* Rating */}
-        <div className="flex items-center mb-2">
-          <div className="flex">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span key={star}>
-                {star <= Math.round(product.rating) ? (
-                  <StarIconSolid className="h-4 w-4 text-gold" />
-                ) : (
-                  <StarIcon className="h-4 w-4 text-gold" />
-                )}
-              </span>
-            ))}
+      <div className="p-4 flex flex-col flex-grow">
+        <div className="flex-grow">
+          <h3 className="text-lg font-normal font-sans mb-1 line-clamp-2 h-14">{product.name}</h3>
+          
+          {/* Rating */}
+          <div className="flex items-center mb-2">
+            <div className="flex">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star}>
+                  {star <= Math.round(product.rating) ? (
+                    <StarIconSolid className="h-4 w-4 text-gold" />
+                  ) : (
+                    <StarIcon className="h-4 w-4 text-gold" />
+                  )}
+                </span>
+              ))}
+            </div>
+            <span className="text-xs text-darkBrown ml-1">({product.reviewCount})</span>
           </div>
-          <span className="text-xs text-darkBrown ml-1">({product.reviewCount})</span>
+          
+          {/* Price */}
+          <div className="flex items-baseline mb-3">
+            <span className="text-xl font-bold">${product.price.toLocaleString()}</span>
+            {product.originalPrice && (
+              <span className="text-sm text-darkBrown line-through ml-2">
+                ${product.originalPrice.toLocaleString()}
+              </span>
+            )}
+          </div>
         </div>
         
-        {/* Price */}
-        <div className="flex items-baseline mb-3">
-          <span className="text-xl font-bold">${product.price.toLocaleString()}</span>
-          {product.originalPrice && (
-            <span className="text-sm text-darkBrown line-through ml-2">
-              ${product.originalPrice.toLocaleString()}
-            </span>
-          )}
+        {/* Add to cart button - fixed at bottom */}
+        <div className="mt-auto">
+          <Button
+            className="w-full"
+            onClick={() => product.inStock && onAddToCart(product, 1)}
+            disabled={!product.inStock}
+          >
+            <ShoppingBagIcon className="h-5 w-5 mr-2" />
+            Add to Cart
+          </Button>
         </div>
-        
-        {/* Add to cart button */}
-        <Button
-          className="w-full"
-          onClick={() => product.inStock && onAddToCart(product, 1)}
-          disabled={!product.inStock}
-        >
-          <ShoppingBagIcon className="h-5 w-5 mr-2" />
-          Add to Cart
-        </Button>
       </div>
     </div>
   );

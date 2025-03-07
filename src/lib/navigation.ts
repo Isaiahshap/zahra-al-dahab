@@ -14,7 +14,6 @@ export interface CategoryItem {
 
 // Import the women's and jewelry navigation items
 import { womensCategories, womensFeatured, womensCollections } from "./womens";
-import { jewelryCategories, jewelryFeatured, sharedCollections } from "./jewelry";
 
 // Main navigation categories
 export const categories: CategoryItem[] = [
@@ -34,9 +33,15 @@ export const categories: CategoryItem[] = [
     dropdown: womensCategories,
   },
   {
-    name: "Jewelry",
-    href: "/jewelry",
-    dropdown: jewelryCategories,
+    name: "About",
+    href: "/about",
+    dropdown: [
+      { name: "About Us", href: "/about/about-us" },
+      { name: "Our Story", href: "/about/our-story" },
+      { name: "FAQ", href: "/about/faq" },
+      { name: "Contact Us", href: "/about/contact" },
+      { name: "Shipping & Returns", href: "/about/shipping-returns" },
+    ],
   },
   {
     name: "Perfume",
@@ -45,11 +50,6 @@ export const categories: CategoryItem[] = [
   {
     name: "Gift Sets",
     href: "/gift-sets",
-    dropdown: [
-      { name: "For Her", href: "/gift-sets/for-her" },
-      { name: "For Him", href: "/gift-sets/for-him" },
-      { name: "Occasion Gifts", href: "/gift-sets/occasion" },
-    ],
   },
   {
     name: "Leather Goods",
@@ -60,7 +60,26 @@ export const categories: CategoryItem[] = [
 // Featured content mapping for dropdowns
 export const featuredMapping = {
   Women: womensFeatured,
-  Jewelry: jewelryFeatured,
+  About: [
+    {
+      title: "Our Heritage",
+      image: "/images/about-heritage.jpg",
+      link: "/about/our-story",
+      description: "The history and craftsmanship behind Zahra Al Dahab",
+    },
+    {
+      title: "Customer Care",
+      image: "/images/about-customer-care.jpg",
+      link: "/about/contact",
+      description: "How we can assist you with your purchase",
+    },
+    {
+      title: "Our Commitment",
+      image: "/images/about-commitment.jpg",
+      link: "/about/about-us",
+      description: "Quality and service that exceeds expectations",
+    },
+  ],
   Men: [
     {
       title: "Premium Watches",
@@ -83,10 +102,10 @@ export const featuredMapping = {
   ],
 };
 
+
 // Collections data
 export const collections = [
   ...womensCollections,
-  ...sharedCollections,
   {
     name: "Oval",
     slug: "oval",

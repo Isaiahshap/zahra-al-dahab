@@ -111,7 +111,7 @@ export default function EnhancedDropdownMenu({
                   <h4 className="text-lg font-medium text-center">New Arrivals</h4>
                   <p className="text-gray-700 text-sm text-center mt-2">Discover our latest {category.toLowerCase()} collection</p>
                   <Link 
-                    href={`/${category.toLowerCase()}/new-arrivals`} 
+                    href={category === "Perfume" || category === "Gift Sets" ? `/${category.toLowerCase().replace(" ", "-")}` : `/${category.toLowerCase()}/new-arrivals`} 
                     className="mt-4 px-6 py-2 bg-black text-white text-sm uppercase tracking-wide hover:bg-gold transition-colors duration-300"
                     onClick={onLinkClick}
                   >
@@ -122,7 +122,7 @@ export default function EnhancedDropdownMenu({
                   <h4 className="text-lg font-medium text-center">Best Sellers</h4>
                   <p className="text-gray-700 text-sm text-center mt-2">Shop our most popular {category.toLowerCase()} items</p>
                   <Link 
-                    href={`/${category.toLowerCase()}/best-sellers`} 
+                    href={category === "Perfume" || category === "Gift Sets" ? `/${category.toLowerCase().replace(" ", "-")}` : `/${category.toLowerCase()}/best-sellers`} 
                     className="mt-4 px-6 py-2 bg-black text-white text-sm uppercase tracking-wide hover:bg-gold transition-colors duration-300"
                     onClick={onLinkClick}
                   >
@@ -133,7 +133,7 @@ export default function EnhancedDropdownMenu({
                   <h4 className="text-lg font-medium text-center">Collections</h4>
                   <p className="text-gray-700 text-sm text-center mt-2">Browse {category.toLowerCase()} by collections</p>
                   <Link 
-                    href={`/${category.toLowerCase()}/collections`} 
+                    href={category === "Perfume" || category === "Gift Sets" ? `/${category.toLowerCase().replace(" ", "-")}` : `/${category.toLowerCase()}/collections`} 
                     className="mt-4 px-6 py-2 bg-black text-white text-sm uppercase tracking-wide hover:bg-gold transition-colors duration-300"
                     onClick={onLinkClick}
                   >
