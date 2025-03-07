@@ -1,49 +1,10 @@
 import Image from "next/image";
-import FeaturedCollections from "@/components/home/FeaturedCollections";
-import ShopByCollection from "@/components/home/ShopByCollection";
+import Link from "next/link";
 import HeroSection from "@/components/home/HeroSection";
-import ProductCard from "@/components/ui/ProductCard";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { Heading, Text } from "@/components/ui/Typography";
-
-// Sample featured products data
-const featuredProducts = [
-  {
-    id: 1,
-    name: "Fan Pendant Necklace",
-    slug: "fan-pendant-necklace",
-    price: 1499,
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1974&auto=format&fit=crop",
-    category: "Necklaces",
-    isNew: true,
-  },
-  {
-    id: 2,
-    name: "Fan Diamond Bracelet",
-    slug: "fan-diamond-bracelet",
-    price: 1299,
-    image: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=1974&auto=format&fit=crop",
-    category: "Bracelets",
-  },
-  {
-    id: 3,
-    name: "Fan Mother of Pearl Earrings",
-    slug: "fan-mother-of-pearl-earrings",
-    price: 899,
-    image: "https://images.unsplash.com/photo-1561172317-5c05c650ca49?q=80&w=1974&auto=format&fit=crop",
-    category: "Earrings",
-    isNew: true,
-  },
-  {
-    id: 4,
-    name: "Petite Diamond Watch",
-    slug: "petite-diamond-watch",
-    price: 2499,
-    image: "https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=1970&auto=format&fit=crop",
-    category: "Watches",
-  },
-];
+import { womensCategories } from "@/lib/womens";
 
 export default function Home() {
   return (
@@ -51,80 +12,341 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Featured Collections */}
+      {/* Categories Showcase */}
       <section className="py-16">
         <Container>
-          <Heading level={2} className="text-center mb-12">Featured Collections</Heading>
-          <FeaturedCollections />
-        </Container>
-      </section>
-      
-      {/* Ramadan Sale Banner */}
-      <section className="py-8">
-        <Container>
-          <div className="relative overflow-hidden bg-black text-white">
-            <div className="grid md:grid-cols-2">
-              {/* Left side with text */}
-              <div className="flex flex-col justify-center px-8 py-12 md:px-12 md:py-16">
-                <div className="space-y-6 max-w-md">
-                  <Heading level={2} className="text-white">
-                    Ramadan Sale
-                  </Heading>
-                  <Text variant="lead" className="text-gray-200">
-                    Celebrate the holy month with exclusive offers on our finest jewelry. 
-                    Up to 30% off on selected items.
-                  </Text>
-                  <div className="pt-2">
-                    <Button 
-                      href="/shop"
-                      variant="outline"
-                      className="border-white text-white hover:bg-white hover:text-black"
-                    >
-                      Shop Now
-                    </Button>
-                  </div>
-                </div>
+          <Heading level={2} className="text-center mb-4">Browse By Category</Heading>
+          <Text variant="muted" className="text-center mb-12 max-w-2xl mx-auto">Explore our extensive collection of luxury jewelry and accessories</Text>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {/* Men's Watches */}
+            <div className="group relative overflow-hidden rounded-md aspect-square">
+              <Image 
+                src="/images/mens-watches.jpg" 
+                alt="Men's Watches"
+                fill
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-medium text-lg">Men&apos;s Watches</h3>
+                <Link 
+                  href="/men/watches" 
+                  className="text-sm text-gray-200 hover:text-white transition-colors underline mt-1 inline-block"
+                >
+                  Shop Now
+                </Link>
               </div>
-              
-              {/* Right side with image */}
-              <div className="relative min-h-[300px] md:min-h-0">
-                <Image
-                  src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2070&auto=format&fit=crop"
-                  alt="Ramadan Sale"
-                  fill
-                  className="object-cover"
-                />
+            </div>
+            
+            {/* Women's Necklaces */}
+            <div className="group relative overflow-hidden rounded-md aspect-square">
+              <Image 
+                src="/images/women-necklaces.jpg" 
+                alt="Women's Necklaces"
+                fill
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-medium text-lg">Women&apos;s Necklaces</h3>
+                <Link 
+                  href="/women/necklaces" 
+                  className="text-sm text-gray-200 hover:text-white transition-colors underline mt-1 inline-block"
+                >
+                  Shop Now
+                </Link>
+              </div>
+            </div>
+            
+            {/* Perfume */}
+            <div className="group relative overflow-hidden rounded-md aspect-square">
+              <Image 
+                src="/images/perfume.jpg" 
+                alt="Perfume"
+                fill
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-medium text-lg">Perfume</h3>
+                <Link 
+                  href="/perfume" 
+                  className="text-sm text-gray-200 hover:text-white transition-colors underline mt-1 inline-block"
+                >
+                  Shop Now
+                </Link>
+              </div>
+            </div>
+            
+            {/* Women's Rings */}
+            <div className="group relative overflow-hidden rounded-md aspect-square">
+              <Image 
+                src="/images/women-rings.jpg" 
+                alt="Women's Rings"
+                fill
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-medium text-lg">Women&apos;s Rings</h3>
+                <Link 
+                  href="/women/rings" 
+                  className="text-sm text-gray-200 hover:text-white transition-colors underline mt-1 inline-block"
+                >
+                  Shop Now
+                </Link>
+              </div>
+            </div>
+            
+            {/* Gift Sets */}
+            <div className="group relative overflow-hidden rounded-md aspect-square">
+              <Image 
+                src="/images/gift-sets.jpg" 
+                alt="Gift Sets"
+                fill
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-medium text-lg">Gift Sets</h3>
+                <Link 
+                  href="/gift-sets" 
+                  className="text-sm text-gray-200 hover:text-white transition-colors underline mt-1 inline-block"
+                >
+                  Shop Now
+                </Link>
+              </div>
+            </div>
+            
+            {/* Leather Goods */}
+            <div className="group relative overflow-hidden rounded-md aspect-square">
+              <Image 
+                src="/images/leather-goods.jpg" 
+                alt="Leather Goods"
+                fill
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-medium text-lg">Leather Goods</h3>
+                <Link 
+                  href="/leather-goods" 
+                  className="text-sm text-gray-200 hover:text-white transition-colors underline mt-1 inline-block"
+                >
+                  Shop Now
+                </Link>
               </div>
             </div>
           </div>
         </Container>
       </section>
       
-      {/* Featured Products */}
-      <section className="py-16">
+      {/* Women's Jewelry Feature */}
+      <section className="py-16 bg-gray-50">
         <Container>
-          <Heading level={2} className="text-center mb-12">New Arrivals</Heading>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button 
-              href="/shop"
-              variant="outline" 
-              className="border-black text-black hover:bg-black hover:text-white"
-            >
-              View All Products
-            </Button>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <Heading level={2}>Women&apos;s Jewelry</Heading>
+              <Text variant="body" className="text-gray-600">
+                Explore our exquisite selection of women&apos;s jewelry, from elegant watches and timeless necklaces to stunning rings and bracelets. Each piece is crafted with precision and designed to complement your unique style.
+              </Text>
+              
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                {womensCategories.map((category) => (
+                  <Link 
+                    key={category.href}
+                    href={category.href}
+                    className="block p-3 border border-gray-200 rounded hover:border-gold hover:bg-gold/5 transition-colors"
+                  >
+                    <h4 className="font-medium">{category.name}</h4>
+                    <p className="text-sm text-gray-600">Explore our {category.name.toLowerCase()}</p>
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="pt-4">
+                <Button 
+                  href="/women"
+                  variant="outline"
+                  className="border-gold text-gold hover:bg-gold hover:text-black"
+                >
+                  Browse All Women&apos;s Jewelry
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative aspect-square md:aspect-auto md:h-full">
+              <Image
+                src="/images/womens-jewelry.jpg"
+                alt="Women's Jewelry"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
           </div>
         </Container>
       </section>
       
-      {/* Shop By Collection */}
+      {/* Men's Jewelry Feature */}
+      <section className="py-16">
+        <Container>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative aspect-square md:aspect-auto md:h-full order-2 md:order-1">
+              <Image
+                src="/images/mens-jewelry.jpg"
+                alt="Men's Jewelry"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
+            
+            <div className="space-y-6 order-1 md:order-2">
+              <Heading level={2}>Men&apos;s Luxury Collection</Heading>
+              <Text variant="body" className="text-gray-600">
+                Our men&apos;s luxury collection features premium watches, sophisticated bracelets, elegant rings, and distinguished necklaces. 
+                Crafted with precision and designed for the modern gentleman, each piece embodies timeless style.
+              </Text>
+              
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <Link 
+                  href="/men/watches" 
+                  className="block p-3 border border-gray-200 rounded hover:border-gold hover:bg-gold/5 transition-colors"
+                >
+                  <h4 className="font-medium">Watches</h4>
+                  <p className="text-sm text-gray-600">Premium timepieces</p>
+                </Link>
+                
+                <Link 
+                  href="/men/bracelets" 
+                  className="block p-3 border border-gray-200 rounded hover:border-gold hover:bg-gold/5 transition-colors"
+                >
+                  <h4 className="font-medium">Bracelets</h4>
+                  <p className="text-sm text-gray-600">Elegant wrist wear</p>
+                </Link>
+                
+                <Link 
+                  href="/men/rings" 
+                  className="block p-3 border border-gray-200 rounded hover:border-gold hover:bg-gold/5 transition-colors"
+                >
+                  <h4 className="font-medium">Rings</h4>
+                  <p className="text-sm text-gray-600">Sophisticated designs</p>
+                </Link>
+                
+                <Link 
+                  href="/men/necklaces" 
+                  className="block p-3 border border-gray-200 rounded hover:border-gold hover:bg-gold/5 transition-colors"
+                >
+                  <h4 className="font-medium">Necklaces</h4>
+                  <p className="text-sm text-gray-600">Distinguished pieces</p>
+                </Link>
+              </div>
+              
+              <div className="pt-4">
+                <Button 
+                  href="/men"
+                  variant="outline"
+                  className="border-black text-black hover:bg-black hover:text-gold"
+                >
+                  Explore Men&apos;s Collection
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Perfume & Gift Sets */}
       <section className="py-16 bg-gray-50">
         <Container>
-          <ShopByCollection />
+          <Heading level={2} className="text-center mb-12">Luxury Fragrances & Gift Sets</Heading>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Perfume */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden group">
+              <div className="relative h-80">
+                <Image
+                  src="/images/perfume-feature.jpg"
+                  alt="Luxury Perfumes"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-medium mb-2">Premium Fragrances</h3>
+                <p className="text-gray-600 mb-4">
+                  Discover our collection of exquisite perfumes, crafted from the finest ingredients to create 
+                  signature scents that leave a lasting impression.
+                </p>
+                <Button 
+                  href="/perfume"
+                  variant="outline"
+                  className="border-gold text-gold hover:bg-gold hover:text-black"
+                >
+                  Shop Perfumes
+                </Button>
+              </div>
+            </div>
+            
+            {/* Gift Sets */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden group">
+              <div className="relative h-80">
+                <Image
+                  src="/images/gift-sets-feature.jpg"
+                  alt="Luxury Gift Sets"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-medium mb-2">Curated Gift Sets</h3>
+                <p className="text-gray-600 mb-4">
+                  Make any occasion special with our carefully curated gift sets, combining our finest jewelry pieces
+                  and fragrances in elegant presentation boxes.
+                </p>
+                <Button 
+                  href="/gift-sets"
+                  variant="outline"
+                  className="border-gold text-gold hover:bg-gold hover:text-black"
+                >
+                  Explore Gift Sets
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Leather Goods Feature */}
+      <section className="py-16">
+        <Container>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <Heading level={2}>Premium Leather Goods</Heading>
+              <Text variant="body" className="text-gray-600">
+                Discover our collection of fine leather accessories, crafted from the highest quality materials.
+                Each piece combines elegant design with practical functionality, perfect for the discerning individual.
+              </Text>
+              <div className="pt-4">
+                <Button 
+                  href="/leather-goods"
+                  variant="outline"
+                  className="border-gold text-gold hover:bg-gold hover:text-black"
+                >
+                  Shop Leather Collection
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative aspect-square md:aspect-auto md:h-full">
+              <Image
+                src="/images/leather-goods-feature.jpg"
+                alt="Premium Leather Goods"
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
+          </div>
         </Container>
       </section>
       
@@ -134,10 +356,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative aspect-square md:aspect-auto md:h-full">
               <Image
-                src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?q=80&w=2065&auto=format&fit=crop"
+                src="/images/craftsmanship.jpg"
                 alt="Craftsmanship"
                 fill
-                className="object-cover"
+                className="object-cover rounded-md"
               />
             </div>
             <div className="space-y-6 px-4 md:px-8">
@@ -150,14 +372,34 @@ export default function Home() {
               </Text>
               <div className="pt-4">
                 <Button 
-                  href="/about"
+                  href="/about/our-story"
                   variant="outline"
-                  className="border-black text-black hover:bg-black hover:text-white"
+                  className="border-black text-black hover:bg-black hover:text-gold"
                 >
                   Our Story
                 </Button>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-16 bg-gray-50">
+        <Container>
+          <div className="text-center max-w-2xl mx-auto">
+            <Heading level={2} className="mb-4">Questions?</Heading>
+            <Text variant="body" className="text-gray-600 mb-8">
+              Our customer service team is ready to assist you with any questions about our products, 
+              orders, or special requests. We&apos;re here to make your shopping experience exceptional.
+            </Text>
+            <Button 
+              href="/about/contact"
+              variant="primary"
+              className="bg-black text-white px-8 py-3 hover:bg-gold hover:text-black transition-colors"
+            >
+              Contact Us
+            </Button>
           </div>
         </Container>
       </section>

@@ -1,13 +1,22 @@
 import Link from "next/link";
-import { categories, collections } from "@/lib/navigation";
+import { categories } from "@/lib/navigation";
 import Container from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Typography";
+
+// Define the About subsections
+const aboutSubsections = [
+  { name: "About Us", href: "/about/about-us" },
+  { name: "Our Story", href: "/about/our-story" },
+  { name: "FAQ", href: "/about/faq" },
+  { name: "Contact Us", href: "/about/contact" },
+  { name: "Shipping & Returns", href: "/about/shipping-returns" }
+];
 
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-100">
       <Container className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Company Information */}
           <div className="space-y-6">
             <Link href="/" className="inline-block">
@@ -69,67 +78,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Collections */}
-          <div>
-            <Heading level={3} className="text-lg font-medium mb-6 uppercase tracking-wide text-gold">Collections</Heading>
-            <ul className="space-y-3">
-              {collections.slice(0, 6).map((collection) => (
-                <li key={collection.name}>
-                  <Link 
-                    href={collection.href}
-                    className="text-black hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wide"
-                  >
-                    {collection.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Help & Contact */}
+          {/* About & Support */}
           <div>
             <Heading level={3} className="text-lg font-medium mb-6 uppercase tracking-wide text-gold">Support</Heading>
             <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="/about"
-                  className="text-black hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wide"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/contact"
-                  className="text-black hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wide"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/shipping"
-                  className="text-black hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wide"
-                >
-                  Shipping & Returns
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/faq"
-                  className="text-black hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wide"
-                >
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/privacy-policy"
-                  className="text-black hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wide"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
+              {aboutSubsections.map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    href={item.href}
+                    className="text-black hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wide"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -155,9 +117,33 @@ export default function Footer() {
               </form>
             </div>
             <div className="text-right text-black text-sm">
-              <p>&copy; {new Date().getFullYear()} Zahra Al Dahab. All rights reserved.</p>
-              <p className="mt-2">Designed and developed with ♥ by <Link href="https://www.yeshaya.dev" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-black transition-colors duration-300">www.yeshaya.dev</Link></p>
+              <p>&copy; {new Date().getFullYear()} elux.dev. All rights reserved.</p>
+              <p className="mt-2">Website hand crafted by <Link href="https://elux.dev" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-black transition-colors duration-300">elux.dev</Link></p>
             </div>
+          </div>
+        </div>
+
+        {/* Legal Links & Disclaimer */}
+        <div className="mt-8 pt-6 border-t border-gray-100 text-center">
+          <div className="flex flex-wrap justify-center gap-6 mb-4">
+            <Link 
+              href="/privacy-policy" 
+              className="text-black hover:text-gold transition-colors duration-300 text-xs uppercase tracking-wider"
+            >
+              Privacy Policy
+            </Link>
+            <Link 
+              href="/terms-of-service" 
+              className="text-black hover:text-gold transition-colors duration-300 text-xs uppercase tracking-wider"
+            >
+              Terms of Service
+            </Link>
+            <Link 
+              href="/accessibility" 
+              className="text-black hover:text-gold transition-colors duration-300 text-xs uppercase tracking-wider"
+            >
+              Accessibility
+            </Link>
           </div>
         </div>
       </Container>
