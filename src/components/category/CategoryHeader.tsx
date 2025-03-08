@@ -15,8 +15,6 @@ type CategoryHeaderProps = {
   backgroundImage?: string;
   ctaText?: string;
   ctaLink?: string;
-  secondaryCtaText?: string;
-  secondaryCtaLink?: string;
   overlayOpacity?: number;
   className?: string;
   breadcrumbs?: Breadcrumb[];
@@ -28,8 +26,6 @@ export default function CategoryHeader({
   backgroundImage,
   ctaText = "Shop Now",
   ctaLink = "#products",
-  secondaryCtaText = "View Collections",
-  secondaryCtaLink = "#",
   overlayOpacity = 0.6,
   className = "",
   breadcrumbs,
@@ -71,9 +67,6 @@ export default function CategoryHeader({
             </p>
             <div className="flex space-x-4">
               <Button size="lg" href={ctaLink}>{ctaText}</Button>
-              <Button variant="outline" size="lg" href={secondaryCtaLink}>
-                {secondaryCtaText}
-              </Button>
             </div>
           </div>
         </div>

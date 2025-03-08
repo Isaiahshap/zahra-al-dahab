@@ -50,7 +50,7 @@ const watches: ProductWithFeatures[] = [
     discount: 12,
     rating: 4.8,
     reviewCount: 156,
-    image: "/images/watches/gold-watch-1.jpg",
+    image: "/watches/gold-watch-1.png",
     description: "Exquisite 18K gold chronograph with sapphire crystal and automatic movement. Water resistant to 100 meters.",
     features: [
       { name: "Movement", value: "Automatic" },
@@ -68,7 +68,7 @@ const watches: ProductWithFeatures[] = [
     price: 5999,
     rating: 4.9,
     reviewCount: 78,
-    image: "/images/watches/silver-watch-1.jpg",
+    image: "/watches/silver-watch-1.png",
     description: "Stunning silver timepiece with 24 diamonds embedded in the bezel. Leather strap and automatic movement.",
     features: [
       { name: "Movement", value: "Automatic" },
@@ -87,7 +87,7 @@ const watches: ProductWithFeatures[] = [
     discount: 15,
     rating: 4.7,
     reviewCount: 203,
-    image: "/images/watches/black-watch-1.jpg",
+    image: "/watches/black-watch-1.png",
     description: "Professional diver's watch with titanium case and rubber strap. Water resistant to 300 meters.",
     features: [
       { name: "Movement", value: "Automatic" },
@@ -105,7 +105,7 @@ const watches: ProductWithFeatures[] = [
     price: 4299,
     rating: 4.6,
     reviewCount: 112,
-    image: "/images/watches/rose-gold-watch-1.jpg",
+    image: "/watches/rose-gold-watch-1.png",
     description: "Elegant rose gold skeleton watch with visible movement and sapphire crystal on both sides.",
     features: [
       { name: "Movement", value: "Manual" },
@@ -122,7 +122,7 @@ const watches: ProductWithFeatures[] = [
     price: 7999,
     rating: 5.0,
     reviewCount: 56,
-    image: "/images/watches/platinum-watch-1.jpg",
+    image: "/watches/platinum-watch-1.png",
     description: "Sophisticated platinum watch with moonphase complication and crocodile leather strap.",
     features: [
       { name: "Movement", value: "Automatic" },
@@ -140,7 +140,7 @@ const watches: ProductWithFeatures[] = [
     price: 3199,
     rating: 4.7,
     reviewCount: 94,
-    image: "/images/watches/carbon-watch-1.jpg",
+    image: "/watches/carbon-watch-1.png",
     description: "Lightweight carbon fiber chronograph with rubber strap. Perfect for sports and active lifestyles.",
     features: [
       { name: "Movement", value: "Quartz" },
@@ -160,7 +160,8 @@ export default function MensWatchesPage() {
       <CategoryHeader 
         title="Luxury Men's Watches"
         description="Discover our exquisite collection of timepieces crafted for the modern gentleman."
-        backgroundImage="/images/men-watches-hero.jpg"
+        backgroundImage="/mens-watches-hero.png"
+        overlayOpacity={0.5}
       />
       
       <ProductGrid

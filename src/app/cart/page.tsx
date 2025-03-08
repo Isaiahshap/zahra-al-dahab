@@ -117,13 +117,13 @@ export default function CartPage() {
               </div>
               
               <div className="p-6 bg-gray-50 flex justify-between items-center">
-                <button onClick={clearCart} className="text-sm text-gray-500 hover:text-black">
-                  Clear cart
-                </button>
                 <Link href="/" className="flex items-center text-sm text-gold hover:text-black">
                   <ArrowLeftIcon className="h-4 w-4 mr-1" />
                   Continue shopping
                 </Link>
+                <button onClick={clearCart} className="text-sm text-gray-500 hover:text-black">
+                  Clear cart
+                </button>
               </div>
             </div>
           </div>

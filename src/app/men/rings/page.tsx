@@ -50,7 +50,7 @@ const rings: ProductWithFeatures[] = [
     discount: 10,
     rating: 4.8,
     reviewCount: 124,
-    image: "/images/rings/gold-ring-1.jpg",
+    image: "/rings/gold-ring-1.png",
     description: "Exquisite 18K gold signet ring with engraved family crest option. Perfect for the distinguished gentleman.",
     features: [
       { name: "Material", value: "18K Gold" },
@@ -68,7 +68,7 @@ const rings: ProductWithFeatures[] = [
     price: 5499,
     rating: 4.9,
     reviewCount: 86,
-    image: "/images/rings/platinum-ring-1.jpg",
+    image: "/rings/platinum-ring-1.png",
     description: "Stunning platinum band with 12 channel-set diamonds. Sophisticated and modern design.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -87,7 +87,7 @@ const rings: ProductWithFeatures[] = [
     discount: 17,
     rating: 4.7,
     reviewCount: 178,
-    image: "/images/rings/black-ring-1.jpg",
+    image: "/rings/black-ring-1.png",
     description: "Sleek black titanium band with carbon fiber inlay. Lightweight and durable for everyday wear.",
     features: [
       { name: "Material", value: "Titanium" },
@@ -105,7 +105,7 @@ const rings: ProductWithFeatures[] = [
     price: 3899,
     rating: 4.6,
     reviewCount: 92,
-    image: "/images/rings/rose-gold-ring-1.jpg",
+    image: "/rings/rose-gold-ring-1.png",
     description: "Elegant rose gold ring with black onyx stone. A perfect blend of classic and contemporary.",
     features: [
       { name: "Material", value: "18K Rose Gold" },
@@ -122,7 +122,7 @@ const rings: ProductWithFeatures[] = [
     price: 6299,
     rating: 5.0,
     reviewCount: 64,
-    image: "/images/rings/sapphire-ring-1.jpg",
+    image: "/rings/saphirre-ring-1.png",
     description: "Sophisticated platinum ring with a deep blue sapphire. A timeless piece for the modern gentleman.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -130,7 +130,7 @@ const rings: ProductWithFeatures[] = [
       { name: "Stone", value: "Sapphire" },
       { name: "Width", value: "9mm" }
     ],
-    inStock: true,
+    inStock: false,
     new: true,
     collections: ["Platinum Collection", "Limited Edition"]
   },
@@ -140,7 +140,7 @@ const rings: ProductWithFeatures[] = [
     price: 1699,
     rating: 4.7,
     reviewCount: 142,
-    image: "/images/rings/tungsten-ring-1.jpg",
+    image: "/rings/tungsten-ring-1.png",
     description: "Durable tungsten carbide ring with brushed finish. Scratch-resistant and perfect for active lifestyles.",
     features: [
       { name: "Material", value: "Tungsten Carbide" },
@@ -160,7 +160,8 @@ export default function MensRingsPage() {
       <CategoryHeader 
         title="Luxury Men's Rings"
         description="Discover our exquisite collection of rings crafted for the modern gentleman."
-        backgroundImage="/images/men-rings-hero.jpg"
+        backgroundImage="/rings/mens-rings-hero.png"
+        overlayOpacity={0.5}
       />
       
       <ProductGrid

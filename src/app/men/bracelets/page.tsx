@@ -50,7 +50,7 @@ const bracelets: ProductWithFeatures[] = [
     discount: 14,
     rating: 4.8,
     reviewCount: 116,
-    image: "/images/bracelets/gold-bracelet-1.jpg",
+    image: "/bracelets/gold-bracelet-1.png",
     description: "Exquisite 18K gold link bracelet with a sophisticated design. Perfect weight and balance for daily wear.",
     features: [
       { name: "Material", value: "18K Gold" },
@@ -68,7 +68,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 3999,
     rating: 4.9,
     reviewCount: 68,
-    image: "/images/bracelets/diamond-bracelet-1.jpg",
+    image: "/bracelets/diamond-bracelet-1.png",
     description: "Stunning silver tennis bracelet with 36 round cut diamonds. Elegant and versatile for any occasion.",
     features: [
       { name: "Material", value: "Sterling Silver" },
@@ -87,7 +87,7 @@ const bracelets: ProductWithFeatures[] = [
     discount: 18,
     rating: 4.7,
     reviewCount: 142,
-    image: "/images/bracelets/titanium-bracelet-1.jpg",
+    image: "/bracelets/titanium-bracelet-1.png",
     description: "Sleek black titanium cuff with a modern design. Lightweight and durable for everyday wear.",
     features: [
       { name: "Material", value: "Titanium" },
@@ -105,7 +105,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 1899,
     rating: 4.6,
     reviewCount: 86,
-    image: "/images/bracelets/rose-gold-bracelet-1.jpg",
+    image: "/bracelets/rose-gold-bracelet-1.png",
     description: "Elegant rose gold Cuban link bracelet. A timeless classic with a modern twist.",
     features: [
       { name: "Material", value: "18K Rose Gold" },
@@ -122,7 +122,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 4599,
     rating: 5.0,
     reviewCount: 41,
-    image: "/images/bracelets/platinum-bracelet-1.jpg",
+    image: "/bracelets/platinum-bracelet-1.png",
     description: "Sophisticated platinum ID bracelet. Can be personalized with custom engraving.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -140,7 +140,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 799,
     rating: 4.7,
     reviewCount: 164,
-    image: "/images/bracelets/steel-bracelet-1.jpg",
+    image: "/bracelets/steel-bracelet-1.png",
     description: "Durable stainless steel mesh bracelet. Sleek design with an adjustable clasp for a perfect fit.",
     features: [
       { name: "Material", value: "Stainless Steel" },
@@ -160,7 +160,8 @@ export default function MensBraceletsPage() {
       <CategoryHeader 
         title="Luxury Men's Bracelets"
         description="Discover our exquisite collection of bracelets crafted for the modern gentleman."
-        backgroundImage="/images/men-bracelets-hero.jpg"
+        backgroundImage="/bracelets/mens-bracelets-hero.png"
+        overlayOpacity={0.5}
       />
       
       <ProductGrid

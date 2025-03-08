@@ -50,7 +50,7 @@ const necklaces: ProductWithFeatures[] = [
     discount: 12,
     rating: 4.8,
     reviewCount: 108,
-    image: "/images/necklaces/gold-chain-1.jpg",
+    image: "/necklaces/gold-chain-1.png",
     description: "Exquisite 18K gold chain with a sophisticated interlocking design. Perfect weight and balance for daily wear.",
     features: [
       { name: "Material", value: "18K Gold" },
@@ -68,7 +68,7 @@ const necklaces: ProductWithFeatures[] = [
     price: 4799,
     rating: 4.9,
     reviewCount: 72,
-    image: "/images/necklaces/diamond-pendant-1.jpg",
+    image: "/necklaces/diamond-pendant-1.png",
     description: "Stunning silver chain with a round cut diamond pendant. Elegant and versatile for any occasion.",
     features: [
       { name: "Material", value: "Sterling Silver" },
@@ -81,13 +81,13 @@ const necklaces: ProductWithFeatures[] = [
   },
   {
     id: 3,
-    name: "Black Titanium Chain",
+    name: "Black Pendant Chain",
     price: 1699,
     originalPrice: 1999,
     discount: 15,
     rating: 4.7,
     reviewCount: 156,
-    image: "/images/necklaces/black-chain-1.jpg",
+    image: "/necklaces/black-chain-1.png",
     description: "Sleek black titanium chain with a modern design. Lightweight and durable for everyday wear.",
     features: [
       { name: "Material", value: "Titanium" },
@@ -105,7 +105,7 @@ const necklaces: ProductWithFeatures[] = [
     price: 3199,
     rating: 4.6,
     reviewCount: 94,
-    image: "/images/necklaces/rose-gold-chain-1.jpg",
+    image: "/necklaces/rose-gold-chain-1.png",
     description: "Elegant rose gold figaro chain with alternating link sizes. A timeless classic with a modern twist.",
     features: [
       { name: "Material", value: "18K Rose Gold" },
@@ -118,11 +118,11 @@ const necklaces: ProductWithFeatures[] = [
   },
   {
     id: 5,
-    name: "Platinum Dog Tag",
+    name: "Platinum Chain",
     price: 5499,
     rating: 5.0,
     reviewCount: 48,
-    image: "/images/necklaces/platinum-tag-1.jpg",
+    image: "/necklaces/platinum-tag-1.png",
     description: "Sophisticated platinum dog tag pendant on a platinum chain. Can be personalized with custom engraving.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -140,7 +140,7 @@ const necklaces: ProductWithFeatures[] = [
     price: 1299,
     rating: 4.7,
     reviewCount: 186,
-    image: "/images/necklaces/steel-chain-1.jpg",
+    image: "/necklaces/steel-chain-1.png",
     description: "Durable stainless steel Cuban link chain. Bold design with a heavy feel and secure clasp.",
     features: [
       { name: "Material", value: "Stainless Steel" },
@@ -160,7 +160,8 @@ export default function MensNecklacesPage() {
       <CategoryHeader 
         title="Luxury Men's Necklaces"
         description="Discover our exquisite collection of necklaces crafted for the modern gentleman."
-        backgroundImage="/images/men-necklaces-hero.jpg"
+        backgroundImage="/necklaces/mens-necklaces-hero.png"
+        overlayOpacity={0.5}
       />
       
       <ProductGrid

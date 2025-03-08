@@ -65,7 +65,7 @@ export default function Footer() {
           <div>
             <Heading level={3} className="text-lg font-medium mb-6 uppercase tracking-wide text-gold">Shop</Heading>
             <ul className="space-y-3">
-              {categories.slice(0, 6).map((category) => (
+              {categories.slice(0, 5).map((category) => (
                 <li key={category.name}>
                   <Link 
                     href={category.href}

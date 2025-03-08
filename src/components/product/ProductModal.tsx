@@ -155,12 +155,6 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
                       <ShoppingBagIcon className="h-5 w-5 mr-2" />
                       Add to Cart
                     </Button>
-                    <Button
-                      variant="secondary"
-                      className="flex-1"
-                    >
-                      Buy Now
-                    </Button>
                   </>
                 ) : (
                   <Button

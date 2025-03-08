@@ -67,7 +67,7 @@ export default function EnhancedDropdownMenu({
               ))}
               <li className="pt-2">
                 <Link 
-                  href={`/${category.toLowerCase()}`}
+                  href={category === "Gift Sets" ? "/gift-sets" : `/${category.toLowerCase()}`}
                   className="inline-flex items-center text-sm font-medium text-gold uppercase tracking-wide hover:underline"
                   onClick={onLinkClick}
                 >
