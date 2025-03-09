@@ -11,31 +11,31 @@ export const metadata: Metadata = {
 // Images for category cards with descriptions
 const categoryDetails: Record<string, {image: string, description: string}> = {
   "Watches": {
-    image: "/images/women-watches.jpg",
+    image: "/women-watches.png",
     description: "Timepieces of exquisite craftsmanship, our watches blend precision with elegance, adorning your wrist with timeless luxury."
   },
   "Necklaces": {
-    image: "/images/women-necklaces.jpg",
+    image: "/women-necklaces.png",
     description: "Graceful chains and pendants that frame your décolletage, crafted with precious metals and stunning gemstones."
   },
   "Rings": {
-    image: "/images/women-rings.jpg",
+    image: "/women-rings.png",
     description: "Symbols of eternal beauty, our rings showcase intricate designs inspired by ancient Middle Eastern artistry."
   },
   "Bracelets": {
-    image: "/images/women-bracelets.jpg",
+    image: "/women-bracelets.png",
     description: "Elaborate bangles and delicate chains designed to accentuate your natural grace with the finest materials."
   },
   "Earrings": {
-    image: "/images/women-earrings.jpg",
+    image: "/women-earrings.png",
     description: "From subtle studs to statement chandeliers, our earrings frame your face with radiant elegance and sophistication."
   },
   "Anklets": {
-    image: "/images/women-anklets.jpg",
+    image: "/women-anklets.png",
     description: "Delicate chains adorned with charms and gemstones, celebrating a cherished tradition of feminine adornment."
   },
   "Personalized": {
-    image: "/images/women-personalized.jpg",
+    image: "/women-personalized.png",
     description: "Bespoke treasures created especially for you, with personalized details that tell your unique story."
   },
 };
@@ -46,7 +46,7 @@ export default function WomensPage() {
       {/* Hero Section */}
       <div className="relative h-[70vh] overflow-hidden">
         <Image 
-          src="/images/womens-collection-hero.jpg"
+          src="/women-hero1.png"
           alt="Women's Luxury Collection"
           fill
           priority
@@ -89,7 +89,7 @@ export default function WomensPage() {
             {/* Image Side */}
             <div className="w-full md:w-1/2 h-[500px] relative overflow-hidden group">
               <Image 
-                src={categoryDetails[category.name]?.image || "/images/womens-default.jpg"}
+                src={categoryDetails[category.name]?.image || "/women-default.png"}
                 alt={category.name}
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"

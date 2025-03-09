@@ -42,21 +42,21 @@ export const womensCollections: NavigationItem[] = [
 // Featured content for women's dropdown
 export const womensFeatured = [
   {
-    title: "The Classic Collection",
-    image: "/images/classic-collection.jpg",
-    link: "/women/collections/classic",
+    title: "Rings Collection",
+    image: "/women-rings.png",
+    link: "/women/rings",
     description: "Timeless pieces for every occasion",
   },
   {
-    title: "New Arrivals",
-    image: "/images/women-new-arrivals.jpg",
-    link: "/women/new-arrivals",
+    title: "Bracelets Collection",
+    image: "/women-bracelets.png",
+    link: "/women/bracelets",
     description: "Discover our latest additions",
   },
   {
-    title: "Best Sellers",
-    image: "/images/women-best-sellers.jpg",
-    link: "/women/best-sellers",
-    description: "Our most loved pieces",
+    title: "Watches Collection",
+    image: "/women-watches.png",
+    link: "/women/watches",
+    description: "Discover our latest additions",
   },
 ]; 

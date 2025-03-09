@@ -50,7 +50,7 @@ const necklaces: ProductWithFeatures[] = [
     discount: 13,
     rating: 4.9,
     reviewCount: 146,
-    image: "/images/necklaces/women-diamond-pendant-1.jpg",
+    image: "/necklaces/women-diamond-pendant-1.png",
     description: "Exquisite 18K white gold solitaire pendant with brilliant-cut diamond on a delicate chain. Simple elegance.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -68,7 +68,7 @@ const necklaces: ProductWithFeatures[] = [
     price: 5999,
     rating: 5.0,
     reviewCount: 72,
-    image: "/images/necklaces/women-pearl-necklace-1.jpg",
+    image: "/necklaces/women-pearl-necklace-1.png",
     description: "Stunning graduated strand of lustrous South Sea pearls with an 18K gold clasp. Timeless elegance.",
     features: [
       { name: "Material", value: "18K Gold & South Sea Pearl" },
@@ -87,7 +87,7 @@ const necklaces: ProductWithFeatures[] = [
     discount: 13,
     rating: 4.7,
     reviewCount: 168,
-    image: "/images/necklaces/women-bar-necklace-1.jpg",
+    image: "/necklaces/women-bar-necklace-1.png",
     description: "Minimalist rose gold horizontal bar necklace with pavé-set diamonds. Modern and versatile.",
     features: [
       { name: "Material", value: "18K Rose Gold" },
@@ -105,7 +105,7 @@ const necklaces: ProductWithFeatures[] = [
     price: 3899,
     rating: 4.8,
     reviewCount: 84,
-    image: "/images/necklaces/women-sapphire-pendant-1.jpg",
+    image: "/necklaces/women-sapphire-pendant-1.png",
     description: "Elegant white gold pendant featuring a blue sapphire surrounded by a diamond halo on a matching chain.",
     features: [
       { name: "Material", value: "14K White Gold" },
@@ -122,7 +122,7 @@ const necklaces: ProductWithFeatures[] = [
     price: 7999,
     rating: 5.0,
     reviewCount: 58,
-    image: "/images/necklaces/women-ruby-necklace-1.jpg",
+    image: "/necklaces/women-ruby-necklace-1.png",
     description: "Sophisticated gold necklace with alternating ruby and diamond stations. A truly regal statement piece.",
     features: [
       { name: "Material", value: "18K Gold" },
@@ -140,7 +140,7 @@ const necklaces: ProductWithFeatures[] = [
     price: 4699,
     rating: 4.9,
     reviewCount: 126,
-    image: "/images/necklaces/women-tennis-necklace-1.jpg",
+    image: "/necklaces/women-tennis-necklace-1.png",
     description: "Classic diamond tennis necklace in white gold with graduated round brilliant diamonds. Elegant luxury.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -160,7 +160,7 @@ export default function WomensNecklacesPage() {
       <CategoryHeader 
         title="Luxury Women's Necklaces"
         description="Discover our exquisite collection of necklaces crafted for the modern woman."
-        backgroundImage="/images/women-necklaces-hero.jpg"
+        backgroundImage="/necklaces/women-necklaces-hero.png"
       />
       
       <ProductGrid

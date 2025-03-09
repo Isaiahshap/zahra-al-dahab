@@ -50,7 +50,7 @@ const watches: ProductWithFeatures[] = [
     discount: 12,
     rating: 4.8,
     reviewCount: 142,
-    image: "/images/watches/women-gold-watch-1.jpg",
+    image: "/watches/women-gold-watch-1.png",
     description: "Exquisite 18K gold watch with diamond bezel and mother of pearl dial. Water resistant to 50 meters.",
     features: [
       { name: "Movement", value: "Swiss Quartz" },
@@ -68,7 +68,7 @@ const watches: ProductWithFeatures[] = [
     price: 5999,
     rating: 4.9,
     reviewCount: 86,
-    image: "/images/watches/women-rose-gold-watch-1.jpg",
+    image: "/watches/women-rose-gold-watch-1.png",
     description: "Stunning rose gold timepiece with 36 diamonds embedded in the bezel. Satin strap and automatic movement.",
     features: [
       { name: "Movement", value: "Automatic" },
@@ -87,7 +87,7 @@ const watches: ProductWithFeatures[] = [
     discount: 15,
     rating: 4.7,
     reviewCount: 178,
-    image: "/images/watches/women-silver-watch-1.jpg",
+    image: "/watches/women-silver-watch-1.png",
     description: "Elegant silver petite watch with mother of pearl dial. Perfect for formal occasions.",
     features: [
       { name: "Movement", value: "Swiss Quartz" },
@@ -101,20 +101,20 @@ const watches: ProductWithFeatures[] = [
   },
   {
     id: 4,
-    name: "Oval Rose Gold Watch",
+    name: "Oval Silver Watch",
     price: 4299,
     rating: 4.6,
     reviewCount: 94,
-    image: "/images/watches/women-oval-watch-1.jpg",
-    description: "Elegant rose gold oval watch with sapphire crystal and diamond hour markers.",
+    image: "/watches/women-oval-watch-1.png",
+    description: "Elegant silver oval watch with sapphire crystal and diamond hour markers.",
     features: [
       { name: "Movement", value: "Automatic" },
-      { name: "Case Material", value: "Rose Gold" },
+      { name: "Case Material", value: "Silver" },
       { name: "Water Resistance", value: "30m" },
       { name: "Case Shape", value: "Oval" }
     ],
     inStock: true,
-    collections: ["Luxury Collection", "Rose Gold"]
+    collections: ["Luxury Collection", "Silver"]
   },
   {
     id: 5,
@@ -122,7 +122,7 @@ const watches: ProductWithFeatures[] = [
     price: 7999,
     rating: 5.0,
     reviewCount: 62,
-    image: "/images/watches/women-platinum-watch-1.jpg",
+    image: "/watches/women-platinum-watch-1.png",
     description: "Sophisticated platinum watch with full diamond-set dial and alligator leather strap.",
     features: [
       { name: "Movement", value: "Swiss Quartz" },
@@ -140,7 +140,7 @@ const watches: ProductWithFeatures[] = [
     price: 3199,
     rating: 4.7,
     reviewCount: 108,
-    image: "/images/watches/women-pearl-watch-1.jpg",
+    image: "/watches/women-pearl-watch-1.png",
     description: "Luxurious gold watch with mother of pearl dial and diamond hour markers.",
     features: [
       { name: "Movement", value: "Automatic" },
@@ -160,7 +160,7 @@ export default function WomensWatchesPage() {
       <CategoryHeader 
         title="Luxury Women's Watches"
         description="Discover our exquisite collection of timepieces crafted for the modern woman."
-        backgroundImage="/images/women-watches-hero.jpg"
+        backgroundImage="/watches/women-watches-hero.png"
       />
       
       <ProductGrid

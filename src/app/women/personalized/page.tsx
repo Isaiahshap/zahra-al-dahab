@@ -50,7 +50,7 @@ const personalizedJewelry: ProductWithFeatures[] = [
     discount: 22,
     rating: 4.9,
     reviewCount: 186,
-    image: "/images/personalized/women-name-necklace-1.jpg",
+    image: "/personalized/women-name-necklace-1.png",
     description: "Elegant 14K gold necklace with your custom name in script lettering. A timeless personalized piece.",
     features: [
       { name: "Material", value: "14K Yellow Gold" },
@@ -68,7 +68,7 @@ const personalizedJewelry: ProductWithFeatures[] = [
     price: 899,
     rating: 4.8,
     reviewCount: 112,
-    image: "/images/personalized/women-initial-ring-1.jpg",
+    image: "/personalized/women-initial-ring-1.png",
     description: "Stunning sterling silver ring with your initial and birthstone. Sophisticated and meaningful.",
     features: [
       { name: "Material", value: "Sterling Silver" },
@@ -88,7 +88,7 @@ const personalizedJewelry: ProductWithFeatures[] = [
     discount: 14,
     rating: 4.7,
     reviewCount: 94,
-    image: "/images/personalized/women-coordinates-bracelet-1.jpg",
+    image: "/personalized/women-coordinates-bracelet-1.png",
     description: "Delicate gold-filled bracelet engraved with coordinates of your special place. A meaningful keepsake.",
     features: [
       { name: "Material", value: "14K Gold-Filled" },
@@ -105,7 +105,7 @@ const personalizedJewelry: ProductWithFeatures[] = [
     price: 1299,
     rating: 4.9,
     reviewCount: 76,
-    image: "/images/personalized/women-monogram-pendant-1.jpg",
+    image: "/personalized/women-monogram-pendant-1.png",
     description: "Luxurious 18K white gold pendant with your monogram surrounded by diamonds. Elegance personified.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -122,7 +122,7 @@ const personalizedJewelry: ProductWithFeatures[] = [
     price: 1499,
     rating: 5.0,
     reviewCount: 58,
-    image: "/images/personalized/women-birthstone-bangle-1.jpg",
+    image: "/personalized/women-birthstone-bangle-1.png",
     description: "14K gold bangle with up to 6 birthstones representing your family members. A cherished family keepsake.",
     features: [
       { name: "Material", value: "14K Yellow Gold" },
@@ -140,7 +140,7 @@ const personalizedJewelry: ProductWithFeatures[] = [
     price: 799,
     rating: 4.7,
     reviewCount: 68,
-    image: "/images/personalized/women-date-earrings-1.jpg",
+    image: "/personalized/women-date-earrings-1.png",
     description: "Sterling silver disc earrings that can be engraved with a special date. Subtle and meaningful.",
     features: [
       { name: "Material", value: "Sterling Silver" },
@@ -160,7 +160,7 @@ export default function WomensPersonalizedPage() {
       <CategoryHeader 
         title="Luxury Personalized Jewelry"
         description="Discover our exquisite collection of personalized jewelry crafted for the modern woman."
-        backgroundImage="/images/women-personalized-hero.jpg"
+        backgroundImage="/women-personalized-hero.png"
       />
       
       <ProductGrid

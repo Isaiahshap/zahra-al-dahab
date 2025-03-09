@@ -28,3 +28,29 @@ body {
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: none;
+  border-radius: 0; /* Sharp corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--muted);
+}
+

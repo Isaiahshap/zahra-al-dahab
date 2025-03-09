@@ -20,6 +20,8 @@ export type Product = {
   new?: boolean;
   bestseller?: boolean;
   collections: string[];
+  availableSizes?: string[];  // Available ring sizes (e.g., "5", "6", "7", etc.)
+  selectedSize?: string;     // Selected ring size
 };
 
 type ProductCardProps = {

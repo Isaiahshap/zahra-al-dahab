@@ -161,7 +161,7 @@ export default function MensWatchesPage() {
         title="Luxury Men's Watches"
         description="Discover our exquisite collection of timepieces crafted for the modern gentleman."
         backgroundImage="/mens-watches-hero.png"
-        overlayOpacity={0.5}
+        overlayOpacity={0.75}
       />
       
       <ProductGrid

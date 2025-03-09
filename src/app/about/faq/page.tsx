@@ -82,7 +82,7 @@ export default function FAQPage() {
       {/* Hero section */}
       <div className="relative h-[400px]">
         <Image 
-          src="/images/faq-hero.jpg" 
+          src="/about-heritage.png" 
           alt="Frequently Asked Questions"
           fill
           style={{ objectFit: "cover" }}

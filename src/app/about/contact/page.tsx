@@ -52,8 +52,8 @@ export default function ContactPage() {
       {/* Hero section */}
       <div className="relative h-[400px]">
         <Image 
-          src="/images/contact-hero.jpg" 
-          alt="Contact Zahra Al Dahab"
+          src="/about-heritage1.png" 
+          alt="Contact Zahra Al Dahab"  
           fill
           style={{ objectFit: "cover" }}
           className="brightness-75"
@@ -80,7 +80,7 @@ export default function ContactPage() {
           <div className="bg-white rounded-xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-[#E8DFD8] group">
             <div className="relative h-40 overflow-hidden">
               <Image 
-                src="/images/contact-phone.jpg" 
+                src="/contact-phone.png" 
                 alt="Call Us"
                 fill
                 style={{ objectFit: "cover" }}
@@ -109,7 +109,7 @@ export default function ContactPage() {
           <div className="bg-white rounded-xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-[#E8DFD8] group">
             <div className="relative h-40 overflow-hidden">
               <Image 
-                src="/images/contact-email.jpg" 
+                src="/contact-email.png" 
                 alt="Email Us"
                 fill
                 style={{ objectFit: "cover" }}
@@ -138,7 +138,7 @@ export default function ContactPage() {
           <div className="bg-white rounded-xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-[#E8DFD8] group">
             <div className="relative h-40 overflow-hidden">
               <Image 
-                src="/images/contact-visit.jpg" 
+                src="/contact-visit.png" 
                 alt="Visit Us"
                 fill
                 style={{ objectFit: "cover" }}
@@ -371,74 +371,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-
-      {/* Store Locations Map */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#3A2618] mb-4">Our Locations</h2>
-            <div className="w-24 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
-            <p className="text-lg text-[#5D4037] max-w-2xl mx-auto">
-              Visit our luxurious boutiques around the world to experience the craftsmanship and elegance of Zahra Al Dahab
-            </p>
-          </div>
-          
-          <div className="bg-[#f8f5f1] rounded-xl overflow-hidden shadow-xl border border-[#E8DFD8]">
-            <div className="relative h-[500px] w-full">
-              {/* Placeholder for a map - In a real implementation, you would embed Google Maps or a similar service */}
-              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p className="text-xl text-[#5D4037] mb-2">
-                    Interactive Map Would Be Displayed Here
-                  </p>
-                  <p className="text-[#5D4037] mb-6">
-                    Showing our worldwide boutique locations
-                  </p>
-                  <div className="inline-block bg-[#3A2618] text-white px-6 py-3 rounded-md font-medium hover:bg-[#5D4037] transition-colors">
-                    View All Locations
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-[#3A2618] mb-3">Dubai</h3>
-                  <p className="text-[#5D4037]">Dubai Mall, Fashion Avenue</p>
-                  <p className="text-[#5D4037]">Downtown Dubai</p>
-                  <p className="text-[#5D4037] mb-3">United Arab Emirates</p>
-                  <p className="text-[#5D4037]">+971 4 123 4567</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-[#3A2618] mb-3">London</h3>
-                  <p className="text-[#5D4037]">12 Bond Street</p>
-                  <p className="text-[#5D4037]">Mayfair, London</p>
-                  <p className="text-[#5D4037] mb-3">United Kingdom</p>
-                  <p className="text-[#5D4037]">+44 20 1234 5678</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-[#3A2618] mb-3">Paris</h3>
-                  <p className="text-[#5D4037]">8 Place Vendôme</p>
-                  <p className="text-[#5D4037]">Paris</p>
-                  <p className="text-[#5D4037] mb-3">France</p>
-                  <p className="text-[#5D4037]">+33 1 23 45 67 89</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-[#3A2618] mb-3">New York</h3>
-                  <p className="text-[#5D4037]">745 Fifth Avenue</p>
-                  <p className="text-[#5D4037]">New York, NY</p>
-                  <p className="text-[#5D4037] mb-3">United States</p>
-                  <p className="text-[#5D4037]">+1 212 123 4567</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 } 
+

@@ -37,7 +37,6 @@ export const categories: CategoryItem[] = [
     href: "/about",
     dropdown: [
       { name: "About Us", href: "/about/about-us" },
-      { name: "Our Story", href: "/about/our-story" },
       { name: "FAQ", href: "/about/faq" },
       { name: "Contact Us", href: "/about/contact" },
       { name: "Shipping & Returns", href: "/about/shipping-returns" },
@@ -51,10 +50,6 @@ export const categories: CategoryItem[] = [
     name: "Gift Sets",
     href: "/gift-sets",
   },
-  {
-    name: "Leather Goods",
-    href: "/leather-goods",
-  },
 ];
 
 // Featured content mapping for dropdowns
@@ -63,19 +58,19 @@ export const featuredMapping = {
   About: [
     {
       title: "Our Heritage",
-      image: "/images/about-heritage.jpg",
+      image: "/about-heritage.png",
       link: "/about/our-story",
       description: "The history and craftsmanship behind Zahra Al Dahab",
     },
     {
       title: "Customer Care",
-      image: "/images/about-customer-care.jpg",
+      image: "/about-customer-care.png",
       link: "/about/contact",
       description: "How we can assist you with your purchase",
     },
     {
       title: "Our Commitment",
-      image: "/images/about-commitment.jpg",
+      image: "/about-commitment.png",
       link: "/about/about-us",
       description: "Quality and service that exceeds expectations",
     },
@@ -83,21 +78,21 @@ export const featuredMapping = {
   Men: [
     {
       title: "Premium Watches",
-      image: "/images/mens-watches.jpg",
+      image: "/mens-watches.jpg",
       link: "/men/watches",
       description: "Discover our luxury timepieces",
     },
     {
-      title: "Gold Collection",
-      image: "/images/mens-gold.jpg",
-      link: "/men/collections/gold",
+      title: "Rings Collection",
+      image: "/mens-rings.png",
+      link: "/men/rings",
       description: "Sophisticated gold pieces for men",
     },
     {
-      title: "New Arrivals",
-      image: "/images/mens-new-arrivals.jpg",
-      link: "/men/new-arrivals",
-      description: "Just landed in our collection",
+      title: "Bracelets Collection",
+      image: "/mens-bracelets.png",
+      link: "/men/bracelets",
+      description: "Stylish bracelets for men",
     },
   ],
 };

@@ -50,7 +50,7 @@ const anklets: ProductWithFeatures[] = [
     discount: 13,
     rating: 4.8,
     reviewCount: 92,
-    image: "/images/anklets/women-diamond-anklet-1.jpg",
+    image: "/anklets/women-diamond-anklet-1.png",
     description: "Delicate 18K white gold anklet with five bezel-set diamond stations. Elegant sparkle for any occasion.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -68,7 +68,7 @@ const anklets: ProductWithFeatures[] = [
     price: 699,
     rating: 4.7,
     reviewCount: 128,
-    image: "/images/anklets/women-gold-anklet-1.jpg",
+    image: "/anklets/women-gold-anklet-1.png",
     description: "Classic 14K yellow gold cable chain anklet with adjustable length. Timeless summer accessory.",
     features: [
       { name: "Material", value: "14K Yellow Gold" },
@@ -88,7 +88,7 @@ const anklets: ProductWithFeatures[] = [
     discount: 16,
     rating: 4.6,
     reviewCount: 74,
-    image: "/images/anklets/women-pearl-anklet-1.jpg",
+    image: "/anklets/women-pearl-anklet-1.png",
     description: "Sterling silver anklet with freshwater pearl accents. Subtle elegance for beach days or special occasions.",
     features: [
       { name: "Material", value: "Sterling Silver" },
@@ -105,7 +105,7 @@ const anklets: ProductWithFeatures[] = [
     price: 899,
     rating: 4.9,
     reviewCount: 64,
-    image: "/images/anklets/women-charm-anklet-1.jpg",
+    image: "/anklets/women-charm-anklet-1.png",
     description: "14K yellow gold anklet featuring various charms including shells, stars, and moon. Perfect beach accessory.",
     features: [
       { name: "Material", value: "14K Yellow Gold" },
@@ -122,7 +122,7 @@ const anklets: ProductWithFeatures[] = [
     price: 2499,
     rating: 5.0,
     reviewCount: 36,
-    image: "/images/anklets/women-tennis-anklet-1.jpg",
+    image: "/anklets/women-tennis-anklet-1.png",
     description: "Luxurious 18K white gold tennis anklet with round brilliant diamonds. Ultimate statement piece.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -140,7 +140,7 @@ const anklets: ProductWithFeatures[] = [
     price: 799,
     rating: 4.7,
     reviewCount: 58,
-    image: "/images/anklets/women-rosegold-anklet-1.jpg",
+    image: "/anklets/women-rosegold-anklet-1.png",
     description: "Delicate rose gold chain anklet with small bezel-set cubic zirconia stones. Modern and feminine.",
     features: [
       { name: "Material", value: "14K Rose Gold" },
@@ -160,7 +160,7 @@ export default function WomensAnkletsPage() {
       <CategoryHeader 
         title="Luxury Women's Anklets"
         description="Discover our exquisite collection of anklets crafted for the modern woman."
-        backgroundImage="/images/women-anklets-hero.jpg"
+        backgroundImage="/women-anklets-hero.png"
       />
       
       <ProductGrid

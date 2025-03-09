@@ -58,7 +58,7 @@ export default function CartPage() {
             <div className="bg-white border border-gray-100 rounded-lg overflow-hidden">
               <div className="p-6 space-y-6">
                 {items.map((item) => (
-                  <div key={item.product.id} className="flex flex-col sm:flex-row gap-4 pb-6 border-b border-gray-100">
+                  <div key={`${item.product.id}-${item.selectedSize || 'default'}`} className="flex flex-col sm:flex-row gap-4 pb-6 border-b border-gray-100">
                     {/* Product Image */}
                     <div className="relative w-full sm:w-28 h-28 bg-gray-50 rounded-md overflow-hidden">
                       <Image
@@ -73,7 +73,7 @@ export default function CartPage() {
                     <div className="flex-1 flex flex-col">
                       <div className="flex justify-between">
                         <h3 className="text-lg font-medium">{item.product.name}</h3>
-                        <button onClick={() => removeItem(item.product.id)} className="text-gray-400 hover:text-black">
+                        <button onClick={() => removeItem(item.product.id, item.selectedSize)} className="text-gray-400 hover:text-black">
                           <XMarkIcon className="h-5 w-5" />
                         </button>
                       </div>
@@ -93,7 +93,7 @@ export default function CartPage() {
                       {/* Quantity Controls */}
                       <div className="flex items-center mt-auto pt-3">
                         <button 
-                          onClick={() => item.quantity > 1 && updateQuantity(item.product.id, item.quantity - 1)}
+                          onClick={() => item.quantity > 1 && updateQuantity(item.product.id, item.quantity - 1, item.selectedSize)}
                           disabled={item.quantity <= 1}
                           className="p-1 border border-gray-200 rounded disabled:opacity-50"
                         >
@@ -101,7 +101,7 @@ export default function CartPage() {
                         </button>
                         <span className="mx-3 w-8 text-center">{item.quantity}</span>
                         <button 
-                          onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.product.id, item.quantity + 1, item.selectedSize)}
                           className="p-1 border border-gray-200 rounded"
                         >
                           <PlusIcon className="h-4 w-4" />

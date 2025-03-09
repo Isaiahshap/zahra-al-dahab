@@ -5,14 +5,15 @@ import { Product } from '@/components/product/ProductCard';
 export interface CartItem {
   product: Product;
   quantity: number;
+  selectedSize?: string;
 }
 
 interface CartStore {
   items: CartItem[];
   totalItems: number;
-  addItem: (product: Product, quantity: number) => void;
-  removeItem: (productId: number) => void;
-  updateQuantity: (productId: number, quantity: number) => void;
+  addItem: (product: Product, quantity: number, selectedSize?: string) => void;
+  removeItem: (productId: number, selectedSize?: string) => void;
+  updateQuantity: (productId: number, quantity: number, selectedSize?: string) => void;
   clearCart: () => void;
 }
 
@@ -22,54 +23,82 @@ export const useCartStore = create<CartStore>()(
       items: [],
       totalItems: 0,
       
-      addItem: (product: Product, quantity: number) => {
+      addItem: (product: Product, quantity: number, selectedSize?: string) => {
         const currentItems = get().items;
-        const existingItem = currentItems.find((item: CartItem) => item.product.id === product.id);
+        // Create a copy of the product with the selected size
+        const productWithSize = selectedSize 
+          ? { ...product, selectedSize } 
+          : product;
         
-        if (existingItem) {
-          // Update quantity if item already exists
+        // Check if the same product with the same size exists
+        const existingItemIndex = currentItems.findIndex(
+          (item: CartItem) => 
+            item.product.id === product.id && 
+            ((!selectedSize && !item.selectedSize) || item.selectedSize === selectedSize)
+        );
+        
+        if (existingItemIndex !== -1) {
+          // Update quantity if item with same size already exists
+          const updatedItems = [...currentItems];
+          updatedItems[existingItemIndex] = {
+            ...updatedItems[existingItemIndex],
+            quantity: updatedItems[existingItemIndex].quantity + quantity
+          };
+          
           set({
-            items: currentItems.map((item: CartItem) => 
-              item.product.id === product.id 
-                ? { ...item, quantity: item.quantity + quantity }
-                : item
-            ),
+            items: updatedItems,
             totalItems: get().totalItems + quantity
           });
         } else {
-          // Add new item
+          // Add new item with the selected size
           set({
-            items: [...currentItems, { product, quantity }],
+            items: [...currentItems, { product: productWithSize, quantity, selectedSize }],
             totalItems: get().totalItems + quantity
           });
         }
       },
       
-      removeItem: (productId: number) => {
+      removeItem: (productId: number, selectedSize?: string) => {
         const currentItems = get().items;
-        const itemToRemove = currentItems.find((item: CartItem) => item.product.id === productId);
         
-        if (itemToRemove) {
+        // Find the specific item to remove (matching product ID and size)
+        const itemToRemoveIndex = currentItems.findIndex(
+          (item: CartItem) => 
+            item.product.id === productId && 
+            ((!selectedSize && !item.selectedSize) || item.selectedSize === selectedSize)
+        );
+        
+        if (itemToRemoveIndex !== -1) {
+          const itemToRemove = currentItems[itemToRemoveIndex];
           set({
-            items: currentItems.filter((item: CartItem) => item.product.id !== productId),
+            items: currentItems.filter((_, index) => index !== itemToRemoveIndex),
             totalItems: get().totalItems - itemToRemove.quantity
           });
         }
       },
       
-      updateQuantity: (productId: number, quantity: number) => {
+      updateQuantity: (productId: number, quantity: number, selectedSize?: string) => {
         const currentItems = get().items;
-        const itemToUpdate = currentItems.find((item: CartItem) => item.product.id === productId);
         
-        if (itemToUpdate) {
+        // Find the specific item to update (matching product ID and size)
+        const itemToUpdateIndex = currentItems.findIndex(
+          (item: CartItem) => 
+            item.product.id === productId && 
+            ((!selectedSize && !item.selectedSize) || item.selectedSize === selectedSize)
+        );
+        
+        if (itemToUpdateIndex !== -1) {
+          const itemToUpdate = currentItems[itemToUpdateIndex];
           const quantityDifference = quantity - itemToUpdate.quantity;
           
+          const updatedItems = [...currentItems];
+          updatedItems[itemToUpdateIndex] = {
+            ...updatedItems[itemToUpdateIndex],
+            quantity
+          };
+          
           set({
-            items: currentItems.map((item: CartItem) => 
-              item.product.id === productId 
-                ? { ...item, quantity }
-                : item
-            ),
+            items: updatedItems,
             totalItems: get().totalItems + quantityDifference
           });
         }

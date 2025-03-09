@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { XMarkIcon, StarIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid, ShoppingBagIcon } from "@heroicons/react/24/solid";
@@ -19,13 +19,35 @@ export type ProductWithFeatures = Product & {
 type ProductModalProps = {
   product: ProductWithFeatures | null;
   onClose: () => void;
-  onAddToCart: (product: ProductWithFeatures, quantity: number) => void;
+  onAddToCart: (product: ProductWithFeatures, quantity: number, size?: string) => void;
+  onSizeChange?: (productId: number, size: string) => void;
 };
 
-export default function ProductModal({ product, onClose, onAddToCart }: ProductModalProps) {
+export default function ProductModal({ product, onClose, onAddToCart, onSizeChange }: ProductModalProps) {
   const [quantity, setQuantity] = useState<number>(1);
+  const [selectedSize, setSelectedSize] = useState<string>("");
+
+  // Initialize selectedSize when product changes
+  useEffect(() => {
+    if (product && product.selectedSize) {
+      setSelectedSize(product.selectedSize);
+    } else {
+      setSelectedSize("");
+    }
+  }, [product]);
 
   if (!product) return null;
+
+  // Handle size change
+  const handleSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newSize = e.target.value;
+    setSelectedSize(newSize);
+    
+    // Call parent handler if provided
+    if (onSizeChange) {
+      onSizeChange(product.id, newSize);
+    }
+  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -114,6 +136,27 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
                 </div>
               )}
               
+              {/* Size selector */}
+              {product.availableSizes && product.availableSizes.length > 0 && (
+                <div className="mb-6">
+                  <label htmlFor="size" className="block font-medium mb-2">Ring Size:</label>
+                  <select
+                    id="size"
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    value={selectedSize}
+                    onChange={handleSizeChange}
+                    disabled={!product.inStock}
+                  >
+                    <option value="" disabled>Select a size</option>
+                    {product.availableSizes.map((size) => (
+                      <option key={size} value={size}>
+                        {size}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+              
               {/* Quantity selector */}
               {product.inStock && (
                 <div className="mb-6">
@@ -150,7 +193,8 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
                   <>
                     <Button
                       className="flex-1"
-                      onClick={() => onAddToCart(product, quantity)}
+                      onClick={() => onAddToCart(product, quantity, selectedSize)}
+                      disabled={product.availableSizes && product.availableSizes.length > 0 && !selectedSize}
                     >
                       <ShoppingBagIcon className="h-5 w-5 mr-2" />
                       Add to Cart

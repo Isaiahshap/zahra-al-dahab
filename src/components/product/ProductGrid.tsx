@@ -45,6 +45,9 @@ export default function ProductGrid({
   // State for selected product (modal)
   const [selectedProduct, setSelectedProduct] = useState<ProductWithFeatures | null>(null);
   
+  // State for product sizes
+  const [productSizes, setProductSizes] = useState<{[productId: number]: string}>({});
+  
   // Filter products based on selected filters
   const filteredProducts = products.filter(product => {
     // Filter by collections
@@ -126,10 +129,32 @@ export default function ProductGrid({
     });
   };
   
-  // Add to cart function
-  const addToCart = (product: ProductWithFeatures, quantity: number) => {
-    // Add to cart store
-    addItem(product, quantity);
+  // Handle size change
+  const handleSizeChange = (productId: number, size: string) => {
+    setProductSizes(prev => ({
+      ...prev,
+      [productId]: size
+    }));
+  };
+  
+  // Add to cart with size
+  const addToCart = (product: ProductWithFeatures, quantity: number, size?: string) => {
+    // Apply the selected size to the product
+    const sizeToUse = size || productSizes[product.id];
+    const productWithSize = { 
+      ...product, 
+      selectedSize: sizeToUse 
+    };
+    
+    // Add to cart
+    addItem(productWithSize, quantity, sizeToUse);
+    
+    // Show success toast
+    addToast({
+      title: "Added to Cart",
+      description: `${product.name}${sizeToUse ? ` (Size ${sizeToUse})` : ""} has been added to your cart.`,
+      type: "success",
+    });
     
     // Add flying animation
     const cartIcon = document.querySelector('.lucide-shopping-bag');
@@ -146,14 +171,6 @@ export default function ProductGrid({
         setFlyingProduct(null);
       }, 1000);
     }
-    
-    // Show toast notification
-    addToast({
-      title: "Added to Cart",
-      description: `${quantity} × ${product.name} added to your cart.`,
-      type: "success",
-      duration: 3000,
-    });
     
     setSelectedProduct(null);
   };
@@ -197,15 +214,28 @@ export default function ProductGrid({
         
         {/* Products grid */}
         <div className={`${showSidebar ? 'md:w-3/4 lg:w-4/5' : 'w-full'}`}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sortedProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onQuickView={() => setSelectedProduct(product)}
-                onAddToCart={(product, quantity) => addToCart(product as ProductWithFeatures, quantity)}
-              />
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <AnimatePresence>
+              {sortedProducts.map((product) => (
+                <motion.div
+                  key={product.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ProductCard
+                    product={{
+                      ...product,
+                      selectedSize: productSizes[product.id] || product.selectedSize
+                    }}
+                    onQuickView={() => setSelectedProduct(product)}
+                    onAddToCart={(product, quantity) => addToCart(product as ProductWithFeatures, quantity)}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
           
           {/* Empty state */}
@@ -244,11 +274,14 @@ export default function ProductGrid({
       </AnimatePresence>
       
       {/* Product detail modal */}
-      <ProductModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        onAddToCart={addToCart}
-      />
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onAddToCart={addToCart}
+          onSizeChange={handleSizeChange}
+        />
+      )}
     </div>
   );
 } 

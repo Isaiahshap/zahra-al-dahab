@@ -50,7 +50,7 @@ const earrings: ProductWithFeatures[] = [
     discount: 16,
     rating: 4.9,
     reviewCount: 156,
-    image: "/images/earrings/women-diamond-studs-1.jpg",
+    image: "/earrings/women-diamond-studs-1.png",
     description: "Classic round-cut diamond stud earrings set in 18K white gold. Timeless elegance for any occasion.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -68,7 +68,7 @@ const earrings: ProductWithFeatures[] = [
     price: 1299,
     rating: 4.8,
     reviewCount: 88,
-    image: "/images/earrings/women-pearl-drop-1.jpg",
+    image: "/earrings/women-pearl-drop-1.png",
     description: "Elegant South Sea pearl drop earrings with diamond accents in 18K yellow gold. Sophisticated and feminine.",
     features: [
       { name: "Material", value: "18K Yellow Gold" },
@@ -87,7 +87,7 @@ const earrings: ProductWithFeatures[] = [
     discount: 12,
     rating: 4.7,
     reviewCount: 132,
-    image: "/images/earrings/women-diamond-hoops-1.jpg",
+    image: "/earrings/women-diamond-hoops-1.png",
     description: "Stunning diamond-set hoop earrings in 18K white gold. Sparkle with every movement.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -105,7 +105,7 @@ const earrings: ProductWithFeatures[] = [
     price: 3599,
     rating: 4.9,
     reviewCount: 74,
-    image: "/images/earrings/women-sapphire-drop-1.jpg",
+    image: "/earrings/women-sapphire-drop-1.png",
     description: "Elegant drop earrings featuring blue sapphires surrounded by a diamond halo in white gold.",
     features: [
       { name: "Material", value: "14K White Gold" },
@@ -122,7 +122,7 @@ const earrings: ProductWithFeatures[] = [
     price: 4999,
     rating: 5.0,
     reviewCount: 46,
-    image: "/images/earrings/women-emerald-cut-studs-1.jpg",
+    image: "/earrings/women-emerald-cut-studs-1.png",
     description: "Sophisticated emerald-cut diamond stud earrings in platinum. Modern and elegant.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -140,7 +140,7 @@ const earrings: ProductWithFeatures[] = [
     price: 999,
     rating: 4.6,
     reviewCount: 108,
-    image: "/images/earrings/women-pearl-hoops-1.jpg",
+    image: "/earrings/women-pearl-hoops-1.png",
     description: "Delicate gold hoop earrings adorned with freshwater pearls. Subtle and elegant for everyday wear.",
     features: [
       { name: "Material", value: "14K Yellow Gold" },
@@ -160,7 +160,7 @@ export default function WomensEarringsPage() {
       <CategoryHeader 
         title="Luxury Women's Earrings"
         description="Discover our exquisite collection of earrings crafted for the modern woman."
-        backgroundImage="/images/women-earrings-hero.jpg"
+        backgroundImage="/women-earrings-hero.png"
       />
       
       <ProductGrid

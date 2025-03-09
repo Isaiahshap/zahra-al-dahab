@@ -51,7 +51,7 @@ export default function CategoryHeader({
       {/* Hero section with background image */}
       {backgroundImage ? (
         <div className="relative h-[40vh] md:h-[50vh] bg-black text-white">
-          <div className={`absolute inset-0 opacity-${Math.round(overlayOpacity * 100)}`}>
+          <div className="absolute inset-0">
             <Image 
               src={backgroundImage}
               alt={title}
@@ -60,6 +60,7 @@ export default function CategoryHeader({
               priority
             />
           </div>
+          <div className="absolute inset-0 bg-black" style={{ opacity: overlayOpacity }}></div>
           <div className="relative h-full flex flex-col justify-center items-center text-center p-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{title}</h1>
             <p className="text-lg md:text-xl max-w-2xl mb-8">

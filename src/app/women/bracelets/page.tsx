@@ -50,7 +50,7 @@ const bracelets: ProductWithFeatures[] = [
     discount: 10,
     rating: 4.8,
     reviewCount: 124,
-    image: "/images/bracelets/women-tennis-bracelet-1.jpg",
+    image: "/bracelets/women-tennis-bracelet-1.png",
     description: "Exquisite 18K white gold tennis bracelet with round brilliant diamonds. A timeless classic for any occasion.",
     features: [
       { name: "Material", value: "18K White Gold" },
@@ -68,7 +68,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 2499,
     rating: 4.9,
     reviewCount: 86,
-    image: "/images/bracelets/women-pearl-bracelet-1.jpg",
+    image: "/bracelets/women-pearl-bracelet-1.png",
     description: "Stunning gold bangle with alternating freshwater pearls and diamond stations. Elegant and sophisticated.",
     features: [
       { name: "Material", value: "18K Gold" },
@@ -87,7 +87,7 @@ const bracelets: ProductWithFeatures[] = [
     discount: 13,
     rating: 4.7,
     reviewCount: 178,
-    image: "/images/bracelets/women-charm-bracelet-1.jpg",
+    image: "/bracelets/women-charm-bracelet-1.png",
     description: "Delicate rose gold chain bracelet with interchangeable diamond charms. Personalize your style.",
     features: [
       { name: "Material", value: "18K Rose Gold" },
@@ -105,7 +105,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 3899,
     rating: 4.6,
     reviewCount: 92,
-    image: "/images/bracelets/women-cuff-bracelet-1.jpg",
+    image: "/bracelets/women-cuff-bracelet-1.png",
     description: "Elegant platinum cuff bracelet with sapphire center stones and diamond accents. Bold and sophisticated.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -122,7 +122,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 5299,
     rating: 5.0,
     reviewCount: 64,
-    image: "/images/bracelets/women-ruby-bracelet-1.jpg",
+    image: "/bracelets/women-ruby-bracelet-1.png",
     description: "Sophisticated gold bracelet with alternating ruby and diamond links. A truly royal statement piece.",
     features: [
       { name: "Material", value: "18K Gold" },
@@ -140,7 +140,7 @@ const bracelets: ProductWithFeatures[] = [
     price: 1699,
     rating: 4.7,
     reviewCount: 142,
-    image: "/images/bracelets/women-pearl-bracelet-2.jpg",
+    image: "/bracelets/women-pearl-bracelet-2.png",
     description: "Elegant three-strand freshwater pearl bracelet with 14K white gold clasp and diamond accent.",
     features: [
       { name: "Material", value: "14K White Gold & Pearl" },
@@ -160,7 +160,7 @@ export default function WomensBraceletsPage() {
       <CategoryHeader 
         title="Luxury Women's Bracelets"
         description="Discover our exquisite collection of bracelets crafted for the modern woman."
-        backgroundImage="/images/women-bracelets-hero.jpg"
+        backgroundImage="/women-bracelets-hero.png"
       />
       
       <ProductGrid

@@ -40,6 +40,9 @@ const sortOptions: SortOption[] = [
   { id: "newest", label: "Newest" },
 ];
 
+// Common ring sizes
+const ringStandardSizes = ["4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9"];
+
 // Mock data for rings
 const rings: ProductWithFeatures[] = [
   {
@@ -50,7 +53,7 @@ const rings: ProductWithFeatures[] = [
     discount: 10,
     rating: 4.8,
     reviewCount: 132,
-    image: "/images/rings/women-gold-ring-1.jpg",
+    image: "/rings/women-gold-ring-1.png",
     description: "Exquisite 18K gold ring with pavé diamond setting. Elegant and timeless design for any occasion.",
     features: [
       { name: "Material", value: "18K Gold" },
@@ -60,7 +63,8 @@ const rings: ProductWithFeatures[] = [
     ],
     inStock: true,
     new: true,
-    collections: ["Royal Collection", "Diamond Collection"]
+    collections: ["Royal Collection", "Diamond Collection"],
+    availableSizes: ["5", "5.5", "6", "6.5", "7", "7.5", "8"]
   },
   {
     id: 2,
@@ -68,7 +72,7 @@ const rings: ProductWithFeatures[] = [
     price: 5499,
     rating: 4.9,
     reviewCount: 94,
-    image: "/images/rings/women-platinum-ring-1.jpg",
+    image: "/rings/women-platinum-ring-1.png",
     description: "Stunning platinum solitaire ring with brilliant-cut diamond. The epitome of elegance and sophistication.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -77,7 +81,8 @@ const rings: ProductWithFeatures[] = [
       { name: "Width", value: "4mm" }
     ],
     inStock: true,
-    collections: ["Diamond Collection", "Platinum Collection"]
+    collections: ["Diamond Collection", "Platinum Collection"],
+    availableSizes: ringStandardSizes
   },
   {
     id: 3,
@@ -87,7 +92,7 @@ const rings: ProductWithFeatures[] = [
     discount: 17,
     rating: 4.7,
     reviewCount: 186,
-    image: "/images/rings/women-rose-gold-ring-1.jpg",
+    image: "/rings/women-rose-gold-ring-1.png",
     description: "Elegant rose gold eternity band with channel-set diamonds. A symbol of everlasting love.",
     features: [
       { name: "Material", value: "18K Rose Gold" },
@@ -97,7 +102,8 @@ const rings: ProductWithFeatures[] = [
     ],
     inStock: false,
     bestseller: true,
-    collections: ["Signature Collection", "Rose Gold"]
+    collections: ["Signature Collection", "Rose Gold"],
+    availableSizes: ["4.5", "5", "5.5", "6", "6.5", "7"]
   },
   {
     id: 4,
@@ -105,7 +111,7 @@ const rings: ProductWithFeatures[] = [
     price: 3899,
     rating: 4.6,
     reviewCount: 78,
-    image: "/images/rings/women-sapphire-ring-1.jpg",
+    image: "/rings/women-sapphire-ring-1.png",
     description: "Elegant white gold ring with blue sapphire center stone surrounded by a diamond halo.",
     features: [
       { name: "Material", value: "14K White Gold" },
@@ -114,7 +120,8 @@ const rings: ProductWithFeatures[] = [
       { name: "Width", value: "8mm" }
     ],
     inStock: true,
-    collections: ["Luxury Collection", "Signature Collection"]
+    collections: ["Luxury Collection", "Signature Collection"],
+    availableSizes: ["5", "6", "7", "8"]
   },
   {
     id: 5,
@@ -122,7 +129,7 @@ const rings: ProductWithFeatures[] = [
     price: 6299,
     rating: 5.0,
     reviewCount: 52,
-    image: "/images/rings/women-emerald-cut-ring-1.jpg",
+    image: "/rings/women-emerald-cut-ring-1.png",
     description: "Sophisticated platinum ring with emerald-cut diamond center stone and tapered baguette side stones.",
     features: [
       { name: "Material", value: "Platinum" },
@@ -132,7 +139,8 @@ const rings: ProductWithFeatures[] = [
     ],
     inStock: true,
     new: true,
-    collections: ["Platinum Collection", "Limited Edition"]
+    collections: ["Platinum Collection", "Limited Edition"],
+    availableSizes: ["5.5", "6", "6.5", "7", "7.5", "8"]
   },
   {
     id: 6,
@@ -140,7 +148,7 @@ const rings: ProductWithFeatures[] = [
     price: 1699,
     rating: 4.7,
     reviewCount: 118,
-    image: "/images/rings/women-pearl-ring-1.jpg",
+    image: "/rings/women-pearl-ring-1.png",
     description: "Elegant white gold ring featuring a cultured pearl with diamond accents. Timeless and sophisticated.",
     features: [
       { name: "Material", value: "14K White Gold" },
@@ -150,7 +158,8 @@ const rings: ProductWithFeatures[] = [
     ],
     inStock: true,
     bestseller: true,
-    collections: ["Signature Collection", "Pearl"]
+    collections: ["Signature Collection", "Pearl"],
+    availableSizes: ["5", "5.5", "6", "6.5", "7", "7.5"]
   },
 ];
 
@@ -160,7 +169,7 @@ export default function WomensRingsPage() {
       <CategoryHeader 
         title="Luxury Women's Rings"
         description="Discover our exquisite collection of rings crafted for the modern woman."
-        backgroundImage="/images/women-rings-hero.jpg"
+        backgroundImage="/rings/rings-hero.png"
       />
       
       <ProductGrid

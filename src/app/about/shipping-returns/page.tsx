@@ -15,7 +15,7 @@ export default function ShippingReturnsPage() {
       {/* Hero section */}
       <div className="relative h-[400px]">
         <Image 
-          src="/images/shipping-hero.jpg" 
+          src="/globe.png" 
           alt="Shipping & Returns"
           fill
           style={{ objectFit: "cover" }}
