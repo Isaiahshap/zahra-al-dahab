@@ -60,17 +60,18 @@ export default function AboutPage() {
       {/* Introduction section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
-            <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-2xl border-4 border-[#f8f5f1]">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
+            <div className="relative h-[350px] sm:h-[400px] w-full rounded-xl overflow-hidden shadow-2xl border-4 border-[#f8f5f1]">
               <Image 
                 src="/about-commitment.png" 
                 alt="Luxury craftsmanship"
                 fill
                 style={{ objectFit: "cover" }}
+                priority
               />
             </div>
           </div>
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-[#3A2618] mb-6">
               A Legacy of Luxury
             </h2>

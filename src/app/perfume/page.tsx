@@ -228,7 +228,7 @@ export default function PerfumePage() {
       {/* Introduction */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col md:flex-row items-center gap-12 mb-20">
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-bold text-[#3A2618] mb-6">
               The Art of Perfumery
             </h2>
@@ -240,13 +240,14 @@ export default function PerfumePage() {
               Our master perfumers source the finest ingredients from around the world, from precious oud and amber to exotic florals and rare spices, creating complex and captivating fragrances that tell a story on your skin.
             </p>
           </div>
-          <div className="md:w-1/2">
-            <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-2xl border-4 border-[#f8f5f1]">
+          <div className="w-full md:w-1/2">
+            <div className="relative h-[350px] sm:h-[400px] w-full rounded-xl overflow-hidden shadow-2xl border-4 border-[#f8f5f1]">
               <Image 
                 src="/perfume2.png" 
                 alt="The Art of Perfumery"
                 fill
                 style={{ objectFit: "cover" }}
+                priority
               />
             </div>
           </div>
