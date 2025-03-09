@@ -50,7 +50,7 @@ const perfumes: ProductWithFeatures[] = [
     discount: 14,
     rating: 4.9,
     reviewCount: 187,
-    image: "/images/perfumes/amber-oud.jpg",
+    image: "/amber-oud.png",
     description: "A luxurious blend of rare amber and precious oud, accented with notes of vanilla and spices for a rich, opulent fragrance that lingers.",
     features: [
       { name: "Fragrance Type", value: "Oriental Woody" },
@@ -69,7 +69,7 @@ const perfumes: ProductWithFeatures[] = [
     price: 279,
     rating: 4.8,
     reviewCount: 143,
-    image: "/images/perfumes/rose-saffron.jpg",
+    image: "/rose-saffron.png",
     description: "An exquisite combination of Bulgarian rose and precious saffron, with undertones of suede and amber for a sophisticated floral experience.",
     features: [
       { name: "Fragrance Type", value: "Floral Oriental" },
@@ -88,7 +88,7 @@ const perfumes: ProductWithFeatures[] = [
     price: 399,
     rating: 5.0,
     reviewCount: 96,
-    image: "/images/perfumes/midnight-oud.jpg",
+    image: "/midnight-oud.png",
     description: "An intense oud fragrance enriched with rare Arabian woods and smoky incense, creating a powerful and mysterious aura.",
     features: [
       { name: "Fragrance Type", value: "Woody Oriental" },
@@ -108,7 +108,7 @@ const perfumes: ProductWithFeatures[] = [
     discount: 17,
     rating: 4.7,
     reviewCount: 154,
-    image: "/images/perfumes/desert-mirage.jpg",
+    image: "/desert-mirage.png",
     description: "A refreshing yet warm composition inspired by desert landscapes, blending citrus, spices, and resins for a unique sensory journey.",
     features: [
       { name: "Fragrance Type", value: "Fresh Spicy" },
@@ -126,7 +126,7 @@ const perfumes: ProductWithFeatures[] = [
     price: 229,
     rating: 4.6,
     reviewCount: 118,
-    image: "/images/perfumes/sapphire-lotus.jpg",
+    image: "/sapphire-lotus.png",
     description: "A serene aquatic floral fragrance featuring lotus flower, water lily, and marine notes, reminiscent of crystal-clear waters and blue skies.",
     features: [
       { name: "Fragrance Type", value: "Fresh Floral" },
@@ -145,7 +145,7 @@ const perfumes: ProductWithFeatures[] = [
     price: 319,
     rating: 4.8,
     reviewCount: 109,
-    image: "/images/perfumes/velvet-sandalwood.jpg",
+    image: "/velvet-sandalwood.png",
     description: "A sophisticated woody fragrance centered around creamy Australian sandalwood, enhanced with vanilla and exotic spices.",
     features: [
       { name: "Fragrance Type", value: "Woody Oriental" },
@@ -164,7 +164,7 @@ const perfumes: ProductWithFeatures[] = [
     price: 259,
     rating: 4.7,
     reviewCount: 132,
-    image: "/images/perfumes/golden-jasmine.jpg",
+    image: "/golden-jasmine.png",
     description: "A radiant floral fragrance showcasing precious jasmine absolute, supported by tuberose and ylang-ylang for an opulent bouquet.",
     features: [
       { name: "Fragrance Type", value: "Floral" },
@@ -184,7 +184,7 @@ const perfumes: ProductWithFeatures[] = [
     discount: 15,
     rating: 4.8,
     reviewCount: 87,
-    image: "/images/perfumes/emerald-cedar.jpg",
+    image: "/emerald-cedar.png",
     description: "A refined woody fragrance centered around Atlas cedar and Virginia cedar, with hints of vetiver and pine for a fresh forest experience.",
     features: [
       { name: "Fragrance Type", value: "Woody Aromatic" },
@@ -204,7 +204,7 @@ export default function PerfumePage() {
       {/* Hero section */}
       <div className="relative h-[600px]">
         <Image 
-          src="/images/perfume-hero.jpg" 
+          src="/perfume-hero.png" 
           alt="Luxury Perfumes"
           fill
           style={{ objectFit: "cover" }}
@@ -243,7 +243,7 @@ export default function PerfumePage() {
           <div className="md:w-1/2">
             <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-2xl border-4 border-[#f8f5f1]">
               <Image 
-                src="/images/perfume-crafting.jpg" 
+                src="/perfume2.png" 
                 alt="The Art of Perfumery"
                 fill
                 style={{ objectFit: "cover" }}

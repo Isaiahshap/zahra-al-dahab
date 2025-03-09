@@ -2,12 +2,40 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function AboutPage() {
+  // About section cards data
+  const aboutSections = [
+    {
+      title: "Our Heritage",
+      description: "Discover the rich history and cultural roots behind Zahra Al Dahab's luxury jewelry and accessories.",
+      imageUrl: "/about-heritage.png",
+      link: "/about/about-us"
+    },
+    {
+      title: "Our Commitment",
+      description: "Learn about our meticulous artisanal process and the skilled craftspeople behind every piece.",
+      imageUrl: "/about-commitment.png",
+      link: "/about/about-us"
+    },
+    {
+      title: "Customer Care",
+      description: "Explore our dedicated customer service approach that ensures your complete satisfaction.",
+      imageUrl: "/about-customer-care.png",
+      link: "/about/contact"
+    },
+    {
+      title: "Our Team",
+      description: "Meet the passionate individuals who bring our vision to life and craft our luxury pieces.",
+      imageUrl: "/team-member-1.png",
+      link: "/about/about-us"
+    }
+  ];
+
   return (
     <div className="bg-[#f8f5f1]">
       {/* Hero section */}
       <div className="relative h-[600px]">
         <Image 
-          src="/images/about-banner.jpg" 
+          src="/about-heritage.png" 
           alt="About Zahra Al Dahab"
           fill
           style={{ objectFit: "cover" }}
@@ -35,7 +63,7 @@ export default function AboutPage() {
           <div className="md:w-1/2">
             <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-2xl border-4 border-[#f8f5f1]">
               <Image 
-                src="/images/about-craftsmanship.jpg" 
+                src="/about-commitment.png" 
                 alt="Luxury craftsmanship"
                 fill
                 style={{ objectFit: "cover" }}
@@ -54,7 +82,7 @@ export default function AboutPage() {
               Each piece in our collection represents our dedication to excellence, from the careful selection of the finest materials to the meticulous attention to detail in our manufacturing process.
             </p>
             <Link 
-              href="/about/our-story" 
+              href="/about/about-us" 
               className="inline-block bg-[#3A2618] text-white px-8 py-4 rounded text-lg font-medium hover:bg-[#5D4037] transition-colors duration-300 shadow-md"
             >
               Explore Our Story
@@ -63,127 +91,40 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Navigation cards */}
-      <div className="bg-[#3A2618] py-20">
+      {/* About Section Cards */}
+      <div className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#D4AF37] mb-4">Discover More</h2>
+            <h2 className="text-4xl font-bold text-[#3A2618] mb-4">Our Essence</h2>
             <div className="w-24 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
-            <p className="text-lg text-white max-w-2xl mx-auto">
-              Learn more about our heritage, values, and services that make Zahra Al Dahab your trusted destination for luxury jewelry.
+            <p className="text-lg text-[#5D4037] max-w-3xl mx-auto">
+              Explore the elements that define Zahra Al Dahab&apos;s commitment to excellence and luxury.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link href="/about/about-us">
-              <div className="group bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="relative h-64 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {aboutSections.map((section, index) => (
+              <div key={index} className="bg-[#f8f5f1] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="relative h-60 w-full">
                   <Image 
-                    src="/images/about-heritage.jpg" 
-                    alt="About Us"
+                    src={section.imageUrl}
+                    alt={section.title}
                     fill
                     style={{ objectFit: "cover" }}
-                    className="transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="p-8 border-t-4 border-[#D4AF37]">
-                  <h3 className="text-2xl font-bold text-[#3A2618] mb-3">About Us</h3>
-                  <p className="text-[#5D4037] mb-6">
-                    Learn about our company, values, and what makes us unique in the luxury market.
-                  </p>
-                  <span className="text-[#D4AF37] font-medium group-hover:underline">Discover &rarr;</span>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#3A2618] mb-3">{section.title}</h3>
+                  <p className="text-[#5D4037] mb-4">{section.description}</p>
+                  <Link href={section.link} className="text-[#D4AF37] font-medium hover:underline inline-flex items-center">
+                    Learn more
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
-            </Link>
-
-            <Link href="/about/our-story">
-              <div className="group bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="relative h-64 overflow-hidden">
-                  <Image 
-                    src="/images/about-commitment.jpg" 
-                    alt="Our Story"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-8 border-t-4 border-[#D4AF37]">
-                  <h3 className="text-2xl font-bold text-[#3A2618] mb-3">Our Story</h3>
-                  <p className="text-[#5D4037] mb-6">
-                    Explore the rich history and journey of Zahra Al Dahab through the years.
-                  </p>
-                  <span className="text-[#D4AF37] font-medium group-hover:underline">Discover &rarr;</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/about/faq">
-              <div className="group bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="relative h-64 overflow-hidden">
-                  <Image 
-                    src="/images/about-customer-care.jpg" 
-                    alt="FAQ"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-8 border-t-4 border-[#D4AF37]">
-                  <h3 className="text-2xl font-bold text-[#3A2618] mb-3">FAQ</h3>
-                  <p className="text-[#5D4037] mb-6">
-                    Find answers to commonly asked questions about our products and services.
-                  </p>
-                  <span className="text-[#D4AF37] font-medium group-hover:underline">Discover &rarr;</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/about/contact">
-              <div className="group bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="relative h-64 overflow-hidden">
-                  <Image 
-                    src="/images/contact-us.jpg" 
-                    alt="Contact Us"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-8 border-t-4 border-[#D4AF37]">
-                  <h3 className="text-2xl font-bold text-[#3A2618] mb-3">Contact Us</h3>
-                  <p className="text-[#5D4037] mb-6">
-                    Reach out to our customer service team for any questions or assistance.
-                  </p>
-                  <span className="text-[#D4AF37] font-medium group-hover:underline">Discover &rarr;</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/about/shipping-returns">
-              <div className="group bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="relative h-64 overflow-hidden">
-                  <Image 
-                    src="/images/shipping-returns.jpg" 
-                    alt="Shipping & Returns"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-8 border-t-4 border-[#D4AF37]">
-                  <h3 className="text-2xl font-bold text-[#3A2618] mb-3">Shipping & Returns</h3>
-                  <p className="text-[#5D4037] mb-6">
-                    Information about our shipping policies and hassle-free return process.
-                  </p>
-                  <span className="text-[#D4AF37] font-medium group-hover:underline">Discover &rarr;</span>
-                </div>
-              </div>
-            </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -201,12 +142,12 @@ export default function AboutPage() {
               <div className="text-8xl text-[#D4AF37] font-serif absolute top-0 left-0 transform -translate-y-1/2 ml-4 md:ml-8" aria-hidden="true">&quot;</div>
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl text-[#5D4037] italic mb-8 leading-relaxed">
-                  Zahra Al Dahab pieces have become family heirlooms for us. The quality and craftsmanship are unmatched, and their customer service is  exceptional. Every piece tells a story, and we are proud to be part of the Zahra Al Dahab legacy.
+                  Zahra Al Dahab pieces have become family heirlooms for us. The quality and craftsmanship are unmatched, and their customer service is exceptional. Every piece tells a story, and we are proud to be part of the Zahra Al Dahab legacy.
                 </p>
                 <div className="flex items-center">
                   <div className="relative h-16 w-16 rounded-full overflow-hidden border-2 border-[#D4AF37]">
                     <Image 
-                      src="/images/testimonial-1.jpg" 
+                      src="/team-member-4.png" 
                       alt="Client"
                       fill
                       style={{ objectFit: "cover" }}

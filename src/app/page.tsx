@@ -22,7 +22,7 @@ export default function Home() {
             {/* Men's Watches */}
             <div className="group relative overflow-hidden rounded-md aspect-square">
               <Image 
-                src="/images/mens-watches.jpg" 
+                src="/mens-watches.jpg" 
                 alt="Men's Watches"
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -42,7 +42,7 @@ export default function Home() {
             {/* Women's Necklaces */}
             <div className="group relative overflow-hidden rounded-md aspect-square">
               <Image 
-                src="/images/women-necklaces.jpg" 
+                src="/women-necklaces.png" 
                 alt="Women's Necklaces"
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -62,7 +62,7 @@ export default function Home() {
             {/* Perfume */}
             <div className="group relative overflow-hidden rounded-md aspect-square">
               <Image 
-                src="/images/perfume.jpg" 
+                src="/perfume2.png" 
                 alt="Perfume"
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -82,7 +82,7 @@ export default function Home() {
             {/* Women's Rings */}
             <div className="group relative overflow-hidden rounded-md aspect-square">
               <Image 
-                src="/images/women-rings.jpg" 
+                src="/women-rings.png" 
                 alt="Women's Rings"
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -102,7 +102,7 @@ export default function Home() {
             {/* Gift Sets */}
             <div className="group relative overflow-hidden rounded-md aspect-square">
               <Image 
-                src="/images/gift-sets.jpg" 
+                src="/giftsets-hero.png" 
                 alt="Gift Sets"
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
@@ -119,19 +119,19 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Leather Goods */}
+            {/* Women's Anklets */}
             <div className="group relative overflow-hidden rounded-md aspect-square">
               <Image 
-                src="/images/leather-goods.jpg" 
-                alt="Leather Goods"
+                src="/women-anklets.png" 
+                alt="Women's Anklets"
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <h3 className="font-medium text-lg">Leather Goods</h3>
+                <h3 className="font-medium text-lg">Women&apos;s Anklets</h3>
                 <Link 
-                  href="/leather-goods" 
+                  href="/women/anklets" 
                   className="text-sm text-gray-200 hover:text-white transition-colors underline mt-1 inline-block"
                 >
                   Shop Now
@@ -142,6 +142,8 @@ export default function Home() {
         </Container>
       </section>
       
+
+
       {/* Women's Jewelry Feature */}
       <section className="py-16 bg-gray-50">
         <Container>
@@ -178,7 +180,7 @@ export default function Home() {
             
             <div className="relative aspect-square md:aspect-auto md:h-full">
               <Image
-                src="/images/womens-jewelry.jpg"
+                src="/women-hero1.png"
                 alt="Women's Jewelry"
                 fill
                 className="object-cover rounded-md"
@@ -187,6 +189,7 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
       
       {/* Men's Jewelry Feature */}
       <section className="py-16">
@@ -194,7 +197,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative aspect-square md:aspect-auto md:h-full order-2 md:order-1">
               <Image
-                src="/images/mens-jewelry.jpg"
+                src="/mens-collection-hero.png"
                 alt="Men's Jewelry"
                 fill
                 className="object-cover rounded-md"
@@ -266,7 +269,7 @@ export default function Home() {
             <div className="bg-white rounded-lg shadow-md overflow-hidden group">
               <div className="relative h-80">
                 <Image
-                  src="/images/perfume-feature.jpg"
+                  src="/perfume-hero.png"
                   alt="Luxury Perfumes"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -292,7 +295,7 @@ export default function Home() {
             <div className="bg-white rounded-lg shadow-md overflow-hidden group">
               <div className="relative h-80">
                 <Image
-                  src="/images/gift-sets-feature.jpg"
+                  src="/giftsets-hero.png"
                   alt="Luxury Gift Sets"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -317,31 +320,32 @@ export default function Home() {
         </Container>
       </section>
       
-      {/* Leather Goods Feature */}
+      {/* Premium Leather Goods Feature - Replaced with International Shopping */}
       <section className="py-16">
         <Container>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
-              <Heading level={2}>Premium Leather Goods</Heading>
+              <Heading level={2}>International Shopping</Heading>
               <Text variant="body" className="text-gray-600">
-                Discover our collection of fine leather accessories, crafted from the highest quality materials.
-                Each piece combines elegant design with practical functionality, perfect for the discerning individual.
+                Experience the convenience of global luxury shopping with our international delivery service.
+                We ship our exquisite jewelry, premium fragrances, and curated gift sets to customers worldwide,
+                bringing the elegance of Zahra Al Dahab to your doorstep, wherever you are.
               </Text>
               <div className="pt-4">
                 <Button 
-                  href="/leather-goods"
+                  href="/international-shipping"
                   variant="outline"
                   className="border-gold text-gold hover:bg-gold hover:text-black"
                 >
-                  Shop Leather Collection
+                  International Shipping Details
                 </Button>
               </div>
             </div>
             
             <div className="relative aspect-square md:aspect-auto md:h-full">
               <Image
-                src="/images/leather-goods-feature.jpg"
-                alt="Premium Leather Goods"
+                src="/globe.png"
+                alt="International Shopping"
                 fill
                 className="object-cover rounded-md"
               />
@@ -356,7 +360,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative aspect-square md:aspect-auto md:h-full">
               <Image
-                src="/images/craftsmanship.jpg"
+                src="/about-heritage.png"
                 alt="Craftsmanship"
                 fill
                 className="object-cover rounded-md"
@@ -404,5 +408,5 @@ export default function Home() {
         </Container>
       </section>
     </div>
-  );
+  );  
 }

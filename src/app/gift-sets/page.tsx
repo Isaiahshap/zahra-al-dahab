@@ -50,7 +50,7 @@ const giftSets: ProductWithFeatures[] = [
     discount: 19,
     rating: 4.9,
     reviewCount: 76,
-    image: "/images/gift-sets/diamond-gift-set-her.jpg",
+    image: "/diamond-gift-set-her.png",
     description: "An exquisite gift set featuring a diamond pendant necklace, matching earrings, and a luxury perfume, presented in our signature gold box.",
     features: [
       { name: "Includes", value: "Diamond Necklace, Earrings, Perfume" },
@@ -68,7 +68,7 @@ const giftSets: ProductWithFeatures[] = [
     price: 1799,
     rating: 5.0,
     reviewCount: 58,
-    image: "/images/gift-sets/watch-set-him.jpg",
+    image: "/watch-set-him.png",
     description: "A distinguished gift set featuring a platinum chronograph watch, matching cufflinks, and a premium oud perfume, elegantly packaged.",
     features: [
       { name: "Includes", value: "Chronograph Watch, Cufflinks, Perfume" },
@@ -86,7 +86,7 @@ const giftSets: ProductWithFeatures[] = [
     price: 2499,
     rating: 4.8,
     reviewCount: 42,
-    image: "/images/gift-sets/couples-gift-set.jpg",
+    image: "/couples-gift-set.png",
     description: "A magnificent gift set for couples featuring matching his and hers watches, complementary fragrances, and personalized jewelry items.",
     features: [
       { name: "Includes", value: "2 Watches, 2 Perfumes, 2 Jewelry Pieces" },
@@ -105,7 +105,7 @@ const giftSets: ProductWithFeatures[] = [
     discount: 16,
     rating: 4.9,
     reviewCount: 63,
-    image: "/images/gift-sets/bridal-gift-set.jpg",
+    image: "/bridal-gift-set.png",
     description: "A breathtaking bridal gift set featuring South Sea pearl jewelry, including a necklace, earrings, and bracelet with diamond accents.",
     features: [
       { name: "Includes", value: "Pearl Necklace, Earrings, Bracelet" },
@@ -122,7 +122,7 @@ const giftSets: ProductWithFeatures[] = [
     price: 999,
     rating: 4.7,
     reviewCount: 87,
-    image: "/images/gift-sets/executive-gift-set.jpg",
+    image: "/executive-gift-set.png",
     description: "A sophisticated gift set for business professionals featuring a luxury pen, leather card holder, cufflinks, and a woody fragrance.",
     features: [
       { name: "Includes", value: "Pen, Card Holder, Cufflinks, Perfume" },
@@ -140,7 +140,7 @@ const giftSets: ProductWithFeatures[] = [
     price: 3299,
     rating: 5.0,
     reviewCount: 29,
-    image: "/images/gift-sets/anniversary-gift-set.jpg",
+    image: "/anniversary-gift-set.png",
     description: "An extraordinary anniversary gift set featuring diamond jewelry, premium champagne flutes, and a pair of luxury fragrances.",
     features: [
       { name: "Includes", value: "Diamond Jewelry, Champagne Flutes, 2 Perfumes" },
@@ -160,7 +160,7 @@ export default function GiftSetsPage() {
       {/* Hero section */}
       <div className="relative h-[600px]">
         <Image 
-          src="/images/gift-sets-hero.jpg" 
+          src="/giftsets-hero.png" 
           alt="Luxury Gift Sets"
           fill
           style={{ objectFit: "cover" }}

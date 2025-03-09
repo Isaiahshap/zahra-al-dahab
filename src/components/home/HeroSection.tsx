@@ -44,8 +44,8 @@ export default function HeroSection() {
       {/* Marquee positioned below the hero section */}
       <div className="relative w-full z-10">
         <Marquee 
-          text="⋆ RAMADAN DEALS 30% OFF ⋆ تخفيضات رمضان ٣٠٪ ⋆ LUXURY JEWELRY ⋆ مجوهرات فاخرة ⋆" 
-          className="text-[#D4AF37] bg-black/80 py-3"
+          text="⋆ THE FINEST DUBAI LUXURY GOODS ⋆ أرقى السلع الفاخرة من دبي ⋆ THE FINEST DUBAI LUXURY GOODS ⋆ أرقى السلع الفاخرة من دبي ⋆" 
+          className="text-black bg-[#D4AF37] py-3 font-medium"
           speed={30}
         />
       </div>

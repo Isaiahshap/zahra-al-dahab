@@ -58,8 +58,8 @@ export const featuredMapping = {
   About: [
     {
       title: "Our Heritage",
-      image: "/about-heritage.png",
-      link: "/about/our-story",
+      image: "/about-heritage1.png",
+      link: "/about/about-us",
       description: "The history and craftsmanship behind Zahra Al Dahab",
     },
     {

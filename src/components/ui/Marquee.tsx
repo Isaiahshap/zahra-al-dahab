@@ -20,7 +20,7 @@ export default function Marquee({
   
   return (
     <div 
-      className={`overflow-hidden whitespace-nowrap bg-black text-gold py-2 ${className}`}
+      className={`overflow-hidden whitespace-nowrap py-2 ${className}`}
       ref={marqueeRef}
     >
       <div className="flex">
