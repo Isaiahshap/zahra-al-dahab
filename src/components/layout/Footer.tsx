@@ -6,7 +6,6 @@ import { Heading } from "@/components/ui/Typography";
 // Define the About subsections
 const aboutSubsections = [
   { name: "About Us", href: "/about/about-us" },
-  { name: "Our Story", href: "/about/our-story" },
   { name: "FAQ", href: "/about/faq" },
   { name: "Contact Us", href: "/about/contact" },
   { name: "Shipping & Returns", href: "/about/shipping-returns" }
